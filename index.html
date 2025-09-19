@@ -397,6 +397,343 @@ index 1dd7e91aeb54b3e5b0609269885515ffd6754508..f386fbc67f3de43c4caca93b1d9e5a7c
  </html>
  
 EOF
+)+.tag-chip{font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(45,212,191,.12);color:var(--mint);border:1px solid rgba(45,212,191,.25)}
++.post-card__snippet{margin:4px 0 0;font-size:.95rem;line-height:1.6}
++.post-card__actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
++.btn-soft{background:#101725;border-color:#1d2535;color:#e2e8f0}
++.btn-ghost{background:transparent;border-color:#1f2738;color:var(--muted)}
++.btn-ghost.is-active{color:#facc15;border-color:rgba(250,204,21,.45);background:rgba(250,204,21,.08)}
++.btn-soft:hover{box-shadow:0 16px 32px rgba(0,0,0,.35)}
++.empty{padding:48px 20px;border:1px dashed rgba(58,160,255,.35);border-radius:18px;text-align:center;background:rgba(11,17,28,.65)}
++.empty h3{margin:0 0 10px;font-size:1.2rem}
++.empty p{margin:0;color:var(--muted)}
++.resource-card{display:flex;flex-direction:column;gap:12px}
++.resource-card .btn{align-self:flex-start}
+ .muted{color:var(--muted)}
+ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(2px)}
+ dialog{width:min(820px,92vw);max-height:82vh;border:none;border-radius:16px;background:#0b0f16;color:var(--text);padding:0;overflow:hidden}
+ .dlg-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line)}
++.dlg-title{font-weight:800;font-size:1.05rem}
++.dlg-actions{display:flex;gap:8px;flex-wrap:wrap}
+ .dlg-body{padding:20px;overflow:auto;white-space:normal;line-height:1.75;font-size:1.02rem}
+ .dlg-body h1,h2,h3{margin:1em 0 .5em}
+ .dlg-body blockquote{margin:.6em 0;padding-left:12px;border-left:3px solid #334155;color:#cbd5e1}
+ .dlg-body code{background:#0f172a;padding:2px 6px;border-radius:6px;font-family:ui-monospace,Menlo,monospace}
+ .progress{height:3px;background:#1b2230;position:relative}
+ .progress .bar{position:absolute;inset:0 auto 0 0;width:0%;background:linear-gradient(90deg,var(--mint),var(--sky))}
+ .fab{position:fixed;right:16px;bottom:16px;z-index:60}
+ .footer{padding:30px 18px;border-top:1px solid var(--line);color:var(--muted)}
+ .theme-light{--text:#0b1220;--muted:#5a6475;--panel:#f6f8fb}
+ </style>
+ </head>
+ <body>
+ <header>
+-  <div class="container" style="display:flex;align-items:center;gap:14px;">
++  <div class="container toolbar">
+     <div class="brand"><span class="pulse" aria-hidden="true"></span><span>CF Stories • Aotearoa</span></div>
+-    <div style="margin-left:auto;display:flex;gap:8px;align-items:center;">
++    <div class="toolbar-actions">
+       <button id="themeBtn" class="btn icon-btn" title="Toggle theme">🌓</button>
+       <a class="btn" href="#resources">Resources</a>
+     </div>
+   </div>
+ </header>
+ 
+ <main>
+-  <section class="container" style="padding:38px 18px 10px">
+-    <h1 style="font-family:Outfit,Inter,sans-serif;font-size:clamp(28px,4vw,48px);margin:0 0 10px">Full write-ups with Markdown. Fast, clean, and shareable.</h1>
+-    <p class="muted" style="max-width:760px;margin:6px 0 0">Search feelings, filter by tags, save favourites, deep-link to any piece, and switch themes. No names — just truth.</p>
++  <section class="container hero">
++    <h1 class="hero-title">Full write-ups with Markdown.<br /><span>Fast, clean, and shareable.</span></h1>
++    <p class="hero-subtitle">Search feelings, filter by tags, save favourites, deep-link to any piece, and switch themes. No names — just truth.</p>
+ 
+-    <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
++    <div class="hero-actions">
+       <label class="search" aria-label="Search posts">
+         <span aria-hidden="true">🔎</span>
+         <input id="search" type="text" placeholder="Search words, feelings, topics…" />
+       </label>
+       <div id="seg" class="seg" role="tablist" aria-label="Filters"></div>
+-      <div style="display:flex;gap:8px;flex-wrap:wrap">
++      <div class="control-buttons">
+         <button id="importBtn" class="btn">Import JSON</button>
+         <button id="exportBtn" class="btn">Export JSON</button>
+         <button id="clearLocal" class="btn" title="Clear local edits">Reset Local</button>
+       </div>
+     </div>
+   </section>
+ 
+-  <section class="container" style="padding:18px">
++  <section class="container stories">
+     <div id="grid" class="grid" aria-live="polite"></div>
+   </section>
+ 
+-  <section id="resources" class="container" style="padding:8px 18px 48px">
+-    <h2 style="margin:0 0 12px">Resources (Aotearoa)</h2>
+-    <div class="grid">
+-      <div class="card"><b>Cystic Fibrosis NZ</b><p class="muted">Support, info, and community for people with CF and their whānau.</p><a class="btn" target="_blank" rel="noopener" href="https://www.cfnz.org.nz">Open</a></div>
+-      <div class="card"><b>Healthline</b><p class="muted">Free 24/7 health advice from registered nurses across NZ.</p><a class="btn" target="_blank" rel="noopener" href="https://www.health.govt.nz">Open</a></div>
+-      <div class="card"><b>Mental Health Support</b><p class="muted">If you’re struggling, talk to someone. 1737 (call/text) is free 24/7.</p><a class="btn" target="_blank" rel="noopener" href="https://1737.org.nz/">Open</a></div>
++  <section id="resources" class="container resources">
++    <h2 class="section-title">Resources (Aotearoa)</h2>
++    <div class="grid resources-grid">
++      <div class="card resource-card"><b>Cystic Fibrosis NZ</b><p class="muted">Support, info, and community for people with CF and their whānau.</p><a class="btn" target="_blank" rel="noopener" href="https://www.cfnz.org.nz">Open</a></div>
++      <div class="card resource-card"><b>Healthline</b><p class="muted">Free 24/7 health advice from registered nurses across NZ.</p><a class="btn" target="_blank" rel="noopener" href="https://www.health.govt.nz">Open</a></div>
++      <div class="card resource-card"><b>Mental Health Support</b><p class="muted">If you’re struggling, talk to someone. 1737 (call/text) is free 24/7.</p><a class="btn" target="_blank" rel="noopener" href="https://1737.org.nz/">Open</a></div>
+     </div>
+   </section>
+ </main>
+ 
+ <dialog id="reader" aria-labelledby="dlg-title">
+   <div class="progress"><div id="bar" class="bar"></div></div>
+   <div class="dlg-head">
+-    <div id="dlg-title" style="font-weight:800">Title</div>
+-    <div style="display:flex;gap:8px">
++    <div id="dlg-title" class="dlg-title">Title</div>
++    <div class="dlg-actions">
+       <button id="copyLinkBtn" class="btn">Copy link</button>
+       <button id="favBtn" class="btn">Save</button>
+       <button id="closeBtn" class="btn">Close</button>
+     </div>
+   </div>
+   <div id="dlg-body" class="dlg-body" tabindex="0"></div>
+ </dialog>
+ 
+ <div class="fab"><button id="randomBtn" class="btn" title="Random (R)">🎲 Random</button></div>
+ 
+ <footer class="container footer">© <span id="year"></span> CF Stories • Aotearoa.</footer>
+ 
+ <script>
+ document.getElementById("year").textContent = new Date().getFullYear();
+ const $=id=>document.getElementById(id);
+ const grid=$("grid"),search=$("search"),seg=$("seg"),reader=$("reader"),
+ dlgTitle=$("dlg-title"),dlgBody=$("dlg-body"),favBtn=$("favBtn"),
+ copyLinkBtn=$("copyLinkBtn"),closeBtn=$("closeBtn"),randomBtn=$("randomBtn"),
+ bar=$("bar"),importBtn=$("importBtn"),exportBtn=$("exportBtn"),clearLocal=$("clearLocal"),
+ themeBtn=$("themeBtn");
+ 
+ let tag="All";
+ let favs=new Set(JSON.parse(localStorage.getItem("cf_favs")||"[]"));
+ let posts=[];
+ 
+diff --git a/index.html b/index.html
+index 1dd7e91aeb54b3e5b0609269885515ffd6754508..f386fbc67f3de43c4caca93b1d9e5a7c9b60b1ee 100644
+--- a/index.html
++++ b/index.html
+@@ -144,100 +176,174 @@ function mdToHtml(md){
+   md=md.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/_(.+?)_/g,"<em>$1</em>");
+   md=md.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+   md=md.replace(/(?:^|\n)(\s*[-*] .+(?:\n\s*[-*] .+)*)/g,(m,list)=>'<ul>'+list.trim().split(/\n/).map(li=>'<li>'+li.replace(/^\s*[-*] /,'')+'</li>').join('')+'</ul>');
+   const blocks=['h1','h2','h3','h4','h5','h6','ul','ol','blockquote','pre'];
+   return md.split(/\n{2,}/).map(ch=>{const x=ch.trim(); if(!x) return ''; if(blocks.some(b=>new RegExp('^<'+b+'[\\s>]').test(x))) return x; return '<p>'+x.replace(/\n/g,'<br>')+'</p>';}).join('\n');
+ }
+ 
+ // Load posts: local override → posts.json
+ (async function load(){
+   try{
+     const local=localStorage.getItem("cf_posts");
+     if(local){ posts=JSON.parse(local); }
+     if(!Array.isArray(posts) || posts.length===0){
+       const res=await fetch("posts.json",{cache:"no-store"});
+       posts=await res.json();
+     }
+   }catch(e){ posts=[]; }
+   if(!Array.isArray(posts)) posts=[];
+   renderSeg(); render();
+   const id=location.hash.replace("#",""); const found=posts.find(p=>p.id===id); if(found) openReader(found);
+ })();
+ 
+ function renderSeg(){
+   seg.innerHTML="";
+   const labels=["All",...new Set(posts.flatMap(p=>p.tags||[])),"Favourites"];
+-  labels.forEach(l=>{ const b=document.createElement("button"); b.textContent=l; if(l===tag) b.classList.add("active");
+-    b.onclick=()=>{ tag=l; renderSeg(); render(); }; seg.appendChild(b); });
++  labels.forEach(l=>{
++    const b=document.createElement("button");
++    b.type="button";
++    b.textContent=l;
++    if(l===tag) b.classList.add("active");
++    b.setAttribute("aria-pressed", l===tag?"true":"false");
++    b.onclick=()=>{ tag=l; renderSeg(); render(); };
++    seg.appendChild(b);
++  });
+ }
+ 
+ function matches(p,q){
+   if(tag==="Favourites" && !favs.has(p.id)) return false;
+   if(tag!=="All" && tag!=="Favourites" && !(p.tags||[]).includes(tag)) return false;
+   if(!q) return true; q=q.toLowerCase();
+   return (p.title||"").toLowerCase().includes(q) || (p.content||"").toLowerCase().includes(q);
+ }
+ 
++function createButton(label, extraClass=""){
++  const btn=document.createElement("button");
++  btn.type="button";
++  btn.className=`btn ${extraClass}`.trim();
++  btn.textContent=label;
++  return btn;
++}
++
+ function render(){
+-  const q=search.value; grid.innerHTML="";
+-  posts.filter(p=>matches(p,q)).forEach(p=>{
+-    const card=document.createElement("div"); card.className="card";
+-    const wrap=document.createElement("div"); wrap.style.display="flex"; wrap.style.gap="12px"; wrap.style.alignItems="flex-start";
+-    const icon=document.createElement("div"); icon.style.width="42px"; icon.style.height="42px"; icon.style.borderRadius="14px";
+-    icon.style.display="grid"; icon.style.placeItems="center"; icon.style.fontWeight="900"; icon.style.background="linear-gradient(135deg,var(--rose),var(--sky))";
+-    icon.textContent=(p.title||"").split(" ").slice(0,2).map(w=>w[0]).join("").toUpperCase();
+-    const right=document.createElement("div"); right.style.flex="1";
+-    const h3=document.createElement("div"); h3.style.fontWeight="800"; h3.style.marginBottom="6px"; h3.textContent=p.title||"(Untitled)";
+-    const tags=document.createElement("div"); tags.style.display="flex"; tags.style.flexWrap="wrap"; tags.style.gap="6px";
+-    (p.tags||[]).forEach(t=>{ const b=document.createElement("span"); b.className="badge"; b.textContent=t; tags.appendChild(b); });
+-    const first=(p.content||"").split(/\n/).find(Boolean)||""; const snippet=first.replace(/[>#*_`]/g,"");
+-    const para=document.createElement("p"); para.className="muted"; para.style.margin="10px 0 0"; para.textContent=snippet.slice(0,200)+(snippet.length>200?"…":"");
+-    const row=document.createElement("div"); row.style.display="flex"; row.style.gap="8px"; row.style.marginTop="12px";
+-    const read=document.createElement("button"); read.className="btn"; read.textContent="Read"; read.onclick=()=>openReader(p);
+-    const like=document.createElement("button"); like.className="btn"; like.textContent=favs.has(p.id)?"★ Saved":"♡ Save";
+-    like.onclick=()=>{ if(favs.has(p.id)) favs.delete(p.id); else favs.add(p.id); localStorage.setItem("cf_favs",JSON.stringify([...favs])); like.textContent=favs.has(p.id)?"★ Saved":"♡ Save"; };
+-    const share=document.createElement("button"); share.className="btn"; share.textContent="Copy link";
+-    share.onclick=async()=>{ const url=location.origin+location.pathname+"#"+(p.id||""); try{await navigator.clipboard.writeText(url);}catch(e){prompt("Copy this link:",url);} };
+-    row.append(read,like,share); right.append(h3,tags,para,row); wrap.append(icon,right); card.append(wrap); grid.append(card);
++  const q=search.value.trim();
++  grid.innerHTML="";
++  const results=posts.filter(p=>matches(p,q));
++  if(results.length===0){
++    const empty=document.createElement("div");
++    empty.className="empty";
++    empty.innerHTML="<h3>No stories found</h3><p>Try adjusting filters or resetting your search.</p>";
++    grid.append(empty);
++    return;
++  }
++
++  results.forEach(p=>{
++    const card=document.createElement("article");
++    card.className="card post-card";
++    card.setAttribute("data-id", p.id||"");
++
++    const header=document.createElement("div");
++    header.className="post-card__header";
++
++    const avatar=document.createElement("div");
++    avatar.className="post-card__avatar";
++    const initials=(p.title||"").split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()||"CF";
++    avatar.textContent=initials;
++    header.appendChild(avatar);
++
++    const meta=document.createElement("div");
++    meta.className="post-card__meta";
++    const title=document.createElement("h3");
++    title.className="post-card__title";
++    title.textContent=p.title||"(Untitled)";
++    meta.appendChild(title);
++
++    const tagWrap=document.createElement("div");
++    tagWrap.className="post-card__tags";
++    (p.tags||[]).forEach(t=>{
++      const chip=document.createElement("span");
++      chip.className="tag-chip";
++      chip.textContent=t;
++      tagWrap.appendChild(chip);
++    });
++    if(tagWrap.childElementCount) meta.appendChild(tagWrap);
++
++    header.appendChild(meta);
++    card.appendChild(header);
++
++    const snippetSource=(p.content||"").split(/\n/).find(Boolean)||"";
++    const cleaned=snippetSource.replace(/[>#*_`]/g," ").replace(/\s+/g," ").trim();
++    if(cleaned){
++      const snippet=document.createElement("p");
++      snippet.className="post-card__snippet muted";
++      const text=cleaned.slice(0,200)+(cleaned.length>200?"…":"");
++      snippet.textContent=text;
++      card.appendChild(snippet);
++    }
++
++    const actions=document.createElement("div");
++    actions.className="post-card__actions";
++
++    const read=createButton("Read","btn-soft");
++    read.title="Open full story";
++    read.onclick=()=>openReader(p);
++    actions.appendChild(read);
++
++    const like=createButton(favs.has(p.id)?"★ Saved":"♡ Save","btn-ghost");
++    like.title="Toggle favourite";
++    like.setAttribute("aria-pressed", favs.has(p.id)?"true":"false");
++    like.classList.toggle("is-active",favs.has(p.id));
++    like.onclick=()=>{
++      if(favs.has(p.id)) favs.delete(p.id); else favs.add(p.id);
++      localStorage.setItem("cf_favs",JSON.stringify([...favs]));
++      like.textContent=favs.has(p.id)?"★ Saved":"♡ Save";
++      like.setAttribute("aria-pressed", favs.has(p.id)?"true":"false");
++      like.classList.toggle("is-active",favs.has(p.id));
++      if(tag==="Favourites") render();
++    };
++    actions.appendChild(like);
++
++    const share=createButton("Copy link","btn-ghost");
++    share.title="Copy shareable link";
++    share.onclick=async()=>{
++      const url=location.origin+location.pathname+"#"+(p.id||"");
++      try{
++        await navigator.clipboard.writeText(url);
++        const original=share.textContent;
++        share.textContent="Copied!";
++        setTimeout(()=>{ share.textContent=original; },1400);
++      }catch(e){
++        prompt("Copy this link:",url);
++      }
++    };
++    actions.appendChild(share);
++
++    card.appendChild(actions);
++    grid.appendChild(card);
+   });
+ }
+ 
+ // Reader
+ function openReader(p){
+   dlgTitle.textContent=p.title||"(Untitled)";
+   dlgBody.innerHTML=mdToHtml(p.content||"");
+   reader.showModal(); document.body.style.overflow="hidden"; dlgBody.scrollTop=0;
+   favBtn.textContent=favs.has(p.id)?"★ Saved":"♡ Save";
+   favBtn.onclick=()=>{ if(favs.has(p.id)) favs.delete(p.id); else favs.add(p.id);
+     localStorage.setItem("cf_favs",JSON.stringify([...favs])); favBtn.textContent=favs.has(p.id)?"★ Saved":"♡ Save"; };
+   copyLinkBtn.onclick=async()=>{ const url=location.origin+location.pathname+"#"+(p.id||""); try{await navigator.clipboard.writeText(url);}catch(e){prompt("Copy this link:",url);} };
+   dlgBody.onscroll=()=>{ const denom=Math.max(1,dlgBody.scrollHeight-dlgBody.clientHeight); const prog=dlgBody.scrollTop/denom; bar.style.width=(prog*100).toFixed(1)+"%"; };
+   closeBtn.onclick=closeReader;
+ }
+ function closeReader(){ reader.close(); document.body.style.overflow=""; bar.style.width="0%"; }
+ 
+ // Keyboard + search
+ let t; search.addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(render,120); });
+ window.addEventListener("keydown",e=>{ if(e.key==="/"){e.preventDefault(); search.focus();} if(e.key.toLowerCase()==="r"){ const i=Math.floor(Math.random()*posts.length); if(posts[i]) openReader(posts[i]); } if(e.key==="Escape"&&reader.open) closeReader(); });
+ 
+ // Import/Export/Reset
+ importBtn.onclick=async()=>{ const txt=prompt("Paste JSON array of posts here:"); if(!txt) return; try{ const data=JSON.parse(txt); if(!Array.isArray(data)) throw new Error("Not an array"); localStorage.setItem("cf_posts",JSON.stringify(data)); posts=data; renderSeg(); render(); alert("Saved to this device. (Public site still uses posts.json in your repo.)"); }catch(e){ alert("Invalid JSON: "+e.message); } };
+ exportBtn.onclick=()=>{ const blob=new Blob([JSON.stringify(posts,null,2)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="posts.json"; a.click(); URL.revokeObjectURL(a.href); };
+ clearLocal.onclick=()=>{ localStorage.removeItem("cf_posts"); alert("Local override cleared. Reloading repo posts.json…"); location.reload(); };
+ </script>
+ </body>
+-</html>
+-
+-      function openPost(post) {
+-        dlgBody.innerHTML = "<h2>"+post.title+"</h2>"+mdToHtml(post.content);
+-        reader.showModal();
+-      }
+-
+-      const reader = document.getElementById("reader");
+-      const dlgBody = document.getElementById("dlg-body");
+-      search.oninput = render;
+-      render();
+-    }
+-    loadPosts();
+-  </script>
+-</body>
+ </html>
+ 
+EOF
 )+.post-card__snippet{margin:4px 0 0;font-size:.95rem;line-height:1.6}
 +.post-card__actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
 +.btn-soft{background:#101725;border-color:#1d2535;color:#e2e8f0}
