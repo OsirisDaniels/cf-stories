@@ -1,4 +1,143 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/posts.json b/posts.json
+index e162fd2dcec94f341ea84c4864e836873ffc8266..36a4d0c15869564f980e62f048f19c1b6a9e1521 100644
+--- a/posts.json
++++ b/posts.json
+@@ -1,89 +1,87 @@
  [
+   {
+     "id": "behind-the-gown",
+     "title": "Behind the Gown and the Smile",
+-    "tags": ["Hospital", "Memoir"],
+-    "content": " Behind the Gown and the Smile\n\n
+-
+-  
+-
+-The darkness was calling me again. It wasn’t loud, not like alarms or monitors — it was quiet, heavy, almost comforting in the worst way. It whispered: *Close your eyes. Let go. You’ve done enough. Stop fighting.* And for a second, I wanted to listen. My body felt ruined, every bone weighed down, every breath dragging me closer to the edge. But then something deeper cut through the haze, something fiercer than the exhaustion: *No. You’re not fighting for yourself anymore. You’re fighting to prove something — to the next generation, to anyone who comes after you, to show them what strength really means. You don’t bow out. Not now. Not here.*
+-
+-I forced my eyes open. The world was blurry, like I was looking at it underwater. My chest rattled, my arms trembled, but I wasn’t about to let the darkness win.
+-
+-That’s when the nurse appeared. She didn’t come in like some big dramatic hero; she just slipped in quietly, like she knew I was on the edge. She checked on me, her voice calm, like she’d done this a hundred times before. Then she set a sandwich and a glass of water down beside me, like it was the most normal thing in the world. To me, though, it felt unreal — like these things had materialised from nowhere. Maybe I was half out of it, but it honestly felt like she’d pulled them out of thin air.
+-
+-I stared at the sandwich for a second, thinking there was no way I had the strength. But I made myself eat it anyway. Every bite tasted bland, cardboard-dry, but it wasn’t about flavour. It was proof — proof that I still wanted to be here, proof that I was dragging myself back inch by inch. Each chew was like telling the disease: *You don’t get to win today.*
+-
+-Then came the part that tested me even more than the food. I told the nurse I needed the bathroom. She nodded, disappeared for a moment, and came back wheeling in *the pan*.
+-
+-The look I gave her said everything. I didn’t need words. It was the biggest *WTF face* I’ve ever pulled in my life. Eyebrows raised, lips twisted, eyes wide — like, *Are you actually serious right now? You think I’m about to use that thing? Not a chance.* I didn’t even need to say it — she read me like an open book. She smirked, almost like she respected it, then gave in without arguing.
+-
+-And just like that, she was hauling my machines with her while I dragged myself out of bed. Tubes tugged at me, the monitor beeped faster with every shaky step, and sweat clung to my forehead even though I was freezing. Every movement was agony. Every step felt like my body was begging me to collapse. But I kept going, because I wasn’t about to let cystic fibrosis strip away my dignity like that. Not today. Not ever.
+-
+-That’s when Mum walked in. She froze for half a second at the glass window, her eyes locked on me — her son, barely holding himself upright, clinging to the nurse, machines rattling behind me. I could see her heart breaking in that pause. But then she was inside the room, her voice breaking the tension, asking if the nurse needed help. Her words carried that mix only a mum can pull off — worry so deep it shakes you, but pride so strong it keeps you standing.
+-
+-The nurse laughed, filling her in, “This is a positive change from earlier. He ate, he drank, and now—well—he refused the pan.” She said it playfully, like she knew it would make Mum laugh. And it did. Mum’s laugh filled the room, warm and real, breaking through all the beeping and fear. I tried to laugh too, but it came out like a wheeze. Still, for that one moment, I wasn’t just a patient in ICU. I was OJ.
+-
+-When I finally made it back to bed, collapsing into the mattress like it was quicksand, Mum sat down beside me. She pulled out a brown paper bag and handed it to the doctor. Inside was Symdeko — the drug she had gone out of her way to get. She told me the story with this wild look in her eyes, describing how she drove into the countryside like some undercover agent, sneaking around, picking it up from a random letterbox. She said it felt like something straight out of a cartel movie, and we laughed together. For a moment, it felt like she wasn’t just my mum sitting in ICU. She was the hero of the story too.
+-
+-But the moment didn’t last. The alarms screamed suddenly, loud and merciless. My chest tightened, my heart rate skyrocketed, shooting from 120 to 169 like it was trying to escape my body. Doctors swarmed the room, voices sharp, urgent, commanding each other. The air changed instantly from calm to chaos.
+-
+-I caught Mum’s eyes as she pulled out her phone to record — like she had promised she would for me. Even though her hands were trembling, even though her whole body looked like it wanted to collapse, she kept her word. She never looked away, even as the doctors pushed her back, ushering her out.
+-
+-That last look between us… it said everything.
+-Don’t you dare give up, OJ. Don’t you let go 
+-
+-So I didn’t.
+-add this part in and make it so much darker and sadder
+-
+-
++    "tags": [
++      "Hospital",
++      "Memoir"
++    ],
++    "content": "Behind the Gown and the Smile\n\nThe darkness was calling me again. It wasn’t loud, not like alarms or monitors — it was quiet, heavy, almost comforting in the worst way. It whispered: *Close your eyes. Let go. You’ve done enough. Stop fighting.* And for a second, I wanted to listen. My body felt ruined, every bone weighed down, every breath dragging me closer to the edge. But then something deeper cut through the haze, something fiercer than the exhaustion: *No. You’re not fighting for yourself anymore. You’re fighting to prove something — to the next generation, to anyone who comes after you, to show them what strength really means. You don’t bow out. Not now. Not here.*\n\nI forced my eyes open. The world was blurry, like I was looking at it underwater. My chest rattled, my arms trembled, but I wasn’t about to let the darkness win.\n\nThat’s when the nurse appeared. She didn’t come in like some big dramatic hero; she just slipped in quietly, like she knew I was on the edge. She checked on me, her voice calm, like she’d done this a hundred times before. Then she set a sandwich and a glass of water down beside me, like it was the most normal thing in the world. To me, though, it felt unreal — like these things had materialised from nowhere. Maybe I was half out of it, but it honestly felt like she’d pulled them out of thin air.\n\nI stared at the sandwich for a second, thinking there was no way I had the strength. But I made myself eat it anyway. Every bite tasted bland, cardboard-dry, but it wasn’t about flavour. It was proof — proof that I still wanted to be here, proof that I was dragging myself back inch by inch. Each chew was like telling the disease: *You don’t get to win today.*\n\nThen came the part that tested me even more than the food. I told the nurse I needed the bathroom. She nodded, disappeared for a moment, and came back wheeling in *the pan*.\n\nThe look I gave her said everything. I didn’t need words. It was the biggest *WTF face* I’ve ever pulled in my life. Eyebrows raised, lips twisted, eyes wide — like, *Are you actually serious right now? You think I’m about to use that thing? Not a chance.* I didn’t even need to say it — she read me like an open book. She smirked, almost like she respected it, then gave in without arguing.\n\nAnd just like that, she was hauling my machines with her while I dragged myself out of bed. Tubes tugged at me, the monitor beeped faster with every shaky step, and sweat clung to my forehead even though I was freezing. Every movement was agony. Every step felt like my body was begging me to collapse. But I kept going, because I wasn’t about to let cystic fibrosis strip away my dignity like that. Not today. Not ever.\n\nThat’s when Mum walked in. She froze for half a second at the glass window, her eyes locked on me — her son, barely holding himself upright, clinging to the nurse, machines rattling behind me. I could see her heart breaking in that pause. But then she was inside the room, her voice breaking the tension, asking if the nurse needed help. Her words carried that mix only a mum can pull off — worry so deep it shakes you, but pride so strong it keeps you standing.\n\nThe nurse laughed, filling her in, “This is a positive change from earlier. He ate, he drank, and now—well—he refused the pan.” She said it playfully, like she knew it would make Mum laugh. And it did. Mum’s laugh filled the room, warm and real, breaking through all the beeping and fear. I tried to laugh too, but it came out like a wheeze. Still, for that one moment, I wasn’t just a patient in ICU. I was OJ.\n\nWhen I finally made it back to bed, collapsing into the mattress like it was quicksand, Mum sat down beside me. She pulled out a brown paper bag and handed it to the doctor. Inside was Symdeko — the drug she had gone out of her way to get. She told me the story with this wild look in her eyes, describing how she drove into the countryside like some undercover agent, sneaking around, picking it up from a random letterbox. She said it felt like something straight out of a cartel movie, and we laughed together. For a moment, it felt like she wasn’t just my mum sitting in ICU. She was the hero of the story too.\n\nBut the moment didn’t last. The alarms screamed suddenly, loud and merciless. My chest tightened, my heart rate skyrocketed, shooting from 120 to 169 like it was trying to escape my body. Doctors swarmed the room, voices sharp, urgent, commanding each other. The air changed instantly from calm to chaos.\n\nI caught Mum’s eyes as she pulled out her phone to record — like she had promised she would for me. Even though her hands were trembling, even though her whole body looked like it wanted to collapse, she kept her word. She never looked away, even as the doctors pushed her back, ushering her out.\n\nThat last look between us… it said everything.\nDon’t you dare give up, OJ. Don’t you let go.\n\nSo I didn’t."
++  },
+   {
+     "id": "price-of-breath",
+     "title": "The Price of Breath (Trikafta)",
+-    "tags": ["Treatment", "Mental Health", "Memoir"],
++    "tags": [
++      "Treatment",
++      "Mental Health",
++      "Memoir"
++    ],
+     "content": "# The Price of Breath (Trikafta)\n\nBeing on Trikafta changed me. It made me sharper, more irritable, and sometimes the people closest to me wore the shrapnel. It’s saving me, but some days it feels like it’s unmaking me too.\n\nBefore this drug, I knew how to survive CF like a brutal routine. Now the pain is different, the emotions louder, and the choices heavier. I’m learning in real time how to make peace with a medicine that gives me breath — and then charges **interest**.\n\nI don’t want to romanticize suffering—ICU was real, the alarms were real—but I understood that battlefield. This one is new. I’m building a life on ground that still trembles, and that’s okay. New ground always does."
+   },
+   {
+     "id": "silence-that-screams",
+     "title": "The Silence That Screams",
+-    "tags": ["Mental Health", "Community"],
++    "tags": [
++      "Mental Health",
++      "Community"
++    ],
+     "content": "# The Silence That Screams\n\nSome people cry out loud. Others sink without a ripple. I’ve talked about mental health a hundred times and I’ll talk about it a hundred more — not because it’s trendy, but because people are slipping through the cracks while we scroll past.\n\nIf that’s you — the quiet one — this is me saying I see you. It’s okay to be messy, to ask for help, to say _“I don’t know how to carry this.”_ You are not a burden. Your breath is allowed to take up space.\n\nAnd if you don’t know the words yet, try this: _“Can you sit with me?”_ It’s enough."
+   },
+   {
+     "id": "darkness-calling",
+     "title": "When the Darkness Called",
+-    "tags": ["Hospital", "Memoir"],
++    "tags": [
++      "Hospital",
++      "Memoir"
++    ],
+     "content": "# When the Darkness Called\n\nThe darkness was calling me again. Not like alarms or monitors — quiet, heavy, almost comforting. _Close your eyes. Let go. You’ve done enough._\n\nBut something fiercer cut through the haze: **No.** You’re not fighting for yourself anymore. Fight so the next kid sees what strength looks like.\n\n[Learn more about CF NZ](https://www.cfnz.org.nz)"
+   },
+   {
+     "id": "fear-i-couldnt-admit",
+     "title": "The Fear I Couldn’t Admit",
+-    "tags": ["ICU", "Anxiety", "Memoir"],
++    "tags": [
++      "ICU",
++      "Anxiety",
++      "Memoir"
++    ],
+     "content": "# The Fear I Couldn’t Admit\n\nThe ward was a blur of yellow gowns and clipped voices. The oximeter glowed at me: `SpO₂ 89%`. Heart `147`. Fever humming through my skin. I knew what it meant and I hated that I knew.\n\n_“I think I have a fever,”_ I said anyway, as if naming it could tame it. The cuff squeezed my arm, the room tightened, and I tried not to listen to the beeps measuring out my fear.\n\nI don’t remember falling asleep. I remember waking up and realizing I’d survived another round I didn’t want to fight."
+   },
+   {
+     "id": "nurse-and-the-sandwich",
+     "title": "The Nurse and the Sandwich",
+-    "tags": ["Humanity", "Memoir", "Hospital"],
++    "tags": [
++      "Humanity",
++      "Memoir",
++      "Hospital"
++    ],
+     "content": "# The Nurse and the Sandwich\n\nShe didn’t burst in like a hero. She just slipped through the door like she’d done this a hundred times. She checked the lines, the numbers, my eyes. Then she put a sandwich and a glass of water on the table.\n\nIt wasn’t a cure. It was permission to stay. I took a bite, and the room softened enough for me to choose one more hour. Sometimes that’s all the medicine you need — one more hour."
+   },
+   {
+     "id": "behind-the-smile-extended",
+     "title": "Behind the Smile (Extended)",
+-    "tags": ["Perspective", "Family", "Memoir"],
++    "tags": [
++      "Perspective",
++      "Family",
++      "Memoir"
++    ],
+     "content": "# Behind the Smile (Extended)\n\nWhen family walks in, you learn a new language: the one where smiles mean _“I’m still here,”_ even if your lungs are arguing. The mask hides the strain and the monitors tattle, but a smile is a small rebellion. It says: **not today**.\n\nA smile can be love. It can also be armour. Sometimes it’s both at once."
+   },
+   {
+     "id": "holding-the-line",
+     "title": "Holding the Line",
+-    "tags": ["Resilience", "Ward Life"],
++    "tags": [
++      "Resilience",
++      "Ward Life"
++    ],
+     "content": "# Holding the Line\n\nNot every day is a comeback story. Some days it’s just doing the physio, taking the meds, being kind to the nurse who’s on hour eleven, and texting back the mate who’s worried. It isn’t flashy, but it’s how you hold the line until the tide turns.\n\nAnd the tide does turn. Maybe not today. But it learns your name."
+   },
+   {
+     "id": "notes-to-the-quiet-kid",
+     "title": "Notes to the Quiet Kid",
+-    "tags": ["Mental Health", "Letters"],
++    "tags": [
++      "Mental Health",
++      "Letters"
++    ],
+     "content": "# Notes to the Quiet Kid\n\nYou don’t have to audition for care. You don’t have to be the loudest to be the most in pain.\n\n- If your voice shakes, that’s fine.\n- If your hands shake, that’s fine.\n- If all you can do is nod when someone says, _“Do you want me to stay?”_ — that’s fine too.\n\nThe point is: you’re still here. Let’s keep you here. Start with water. Start with breath. Start with saying, _“I’m not okay.”_ We can work with that."
+   }
+ ]
+ 
+EOF
+)
    {
      "id": "behind-the-gown",
      "title": "Behind the Gown and the Smile",
