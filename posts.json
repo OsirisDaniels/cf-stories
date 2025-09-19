@@ -137,6 +137,83 @@ index e162fd2dcec94f341ea84c4864e836873ffc8266..36a4d0c15869564f980e62f048f19c1b
  ]
  
 EOF
+)   },
+   {
+     "id": "silence-that-screams",
+     "title": "The Silence That Screams",
+-    "tags": ["Mental Health", "Community"],
++    "tags": [
++      "Mental Health",
++      "Community"
++    ],
+     "content": "# The Silence That Screams\n\nSome people cry out loud. Others sink without a ripple. I’ve talked about mental health a hundred times and I’ll talk about it a hundred more — not because it’s trendy, but because people are slipping through the cracks while we scroll past.\n\nIf that’s you — the quiet one — this is me saying I see you. It’s okay to be messy, to ask for help, to say _“I don’t know how to carry this.”_ You are not a burden. Your breath is allowed to take up space.\n\nAnd if you don’t know the words yet, try this: _“Can you sit with me?”_ It’s enough."
+   },
+   {
+     "id": "darkness-calling",
+     "title": "When the Darkness Called",
+-    "tags": ["Hospital", "Memoir"],
++    "tags": [
++      "Hospital",
++      "Memoir"
++    ],
+     "content": "# When the Darkness Called\n\nThe darkness was calling me again. Not like alarms or monitors — quiet, heavy, almost comforting. _Close your eyes. Let go. You’ve done enough._\n\nBut something fiercer cut through the haze: **No.** You’re not fighting for yourself anymore. Fight so the next kid sees what strength looks like.\n\n[Learn more about CF NZ](https://www.cfnz.org.nz)"
+   },
+   {
+     "id": "fear-i-couldnt-admit",
+     "title": "The Fear I Couldn’t Admit",
+-    "tags": ["ICU", "Anxiety", "Memoir"],
++    "tags": [
++      "ICU",
++      "Anxiety",
++      "Memoir"
++    ],
+     "content": "# The Fear I Couldn’t Admit\n\nThe ward was a blur of yellow gowns and clipped voices. The oximeter glowed at me: `SpO₂ 89%`. Heart `147`. Fever humming through my skin. I knew what it meant and I hated that I knew.\n\n_“I think I have a fever,”_ I said anyway, as if naming it could tame it. The cuff squeezed my arm, the room tightened, and I tried not to listen to the beeps measuring out my fear.\n\nI don’t remember falling asleep. I remember waking up and realizing I’d survived another round I didn’t want to fight."
+   },
+   {
+     "id": "nurse-and-the-sandwich",
+     "title": "The Nurse and the Sandwich",
+-    "tags": ["Humanity", "Memoir", "Hospital"],
++    "tags": [
++      "Humanity",
++      "Memoir",
++      "Hospital"
++    ],
+     "content": "# The Nurse and the Sandwich\n\nShe didn’t burst in like a hero. She just slipped through the door like she’d done this a hundred times. She checked the lines, the numbers, my eyes. Then she put a sandwich and a glass of water on the table.\n\nIt wasn’t a cure. It was permission to stay. I took a bite, and the room softened enough for me to choose one more hour. Sometimes that’s all the medicine you need — one more hour."
+   },
+   {
+     "id": "behind-the-smile-extended",
+     "title": "Behind the Smile (Extended)",
+-    "tags": ["Perspective", "Family", "Memoir"],
++    "tags": [
++      "Perspective",
++      "Family",
++      "Memoir"
++    ],
+     "content": "# Behind the Smile (Extended)\n\nWhen family walks in, you learn a new language: the one where smiles mean _“I’m still here,”_ even if your lungs are arguing. The mask hides the strain and the monitors tattle, but a smile is a small rebellion. It says: **not today**.\n\nA smile can be love. It can also be armour. Sometimes it’s both at once."
+   },
+   {
+     "id": "holding-the-line",
+     "title": "Holding the Line",
+-    "tags": ["Resilience", "Ward Life"],
++    "tags": [
++      "Resilience",
++      "Ward Life"
++    ],
+     "content": "# Holding the Line\n\nNot every day is a comeback story. Some days it’s just doing the physio, taking the meds, being kind to the nurse who’s on hour eleven, and texting back the mate who’s worried. It isn’t flashy, but it’s how you hold the line until the tide turns.\n\nAnd the tide does turn. Maybe not today. But it learns your name."
+   },
+   {
+     "id": "notes-to-the-quiet-kid",
+     "title": "Notes to the Quiet Kid",
+-    "tags": ["Mental Health", "Letters"],
++    "tags": [
++      "Mental Health",
++      "Letters"
++    ],
+     "content": "# Notes to the Quiet Kid\n\nYou don’t have to audition for care. You don’t have to be the loudest to be the most in pain.\n\n- If your voice shakes, that’s fine.\n- If your hands shake, that’s fine.\n- If all you can do is nod when someone says, _“Do you want me to stay?”_ — that’s fine too.\n\nThe point is: you’re still here. Let’s keep you here. Start with water. Start with breath. Start with saying, _“I’m not okay.”_ We can work with that."
+   }
+ ]
+ 
+EOF
 )
    {
      "id": "behind-the-gown",
