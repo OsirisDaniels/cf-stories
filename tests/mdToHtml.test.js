@@ -1,9 +1,3 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a//dev/null b/tests/mdToHtml.test.js
-index 0000000000000000000000000000000000000000..5294c55e3cd0c5fbf4b46301113b23b46a93fc5b 100644
---- a//dev/null
-+++ b/tests/mdToHtml.test.js
-@@ -0,0 +1,46 @@
 +const fs = require('fs');
 +const vm = require('vm');
 +const assert = require('assert');
@@ -50,6 +44,3 @@ index 0000000000000000000000000000000000000000..5294c55e3cd0c5fbf4b46301113b23b4
 +})();
 +
 +console.log('mdToHtml tests passed');
- 
-EOF
-)
