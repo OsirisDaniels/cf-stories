@@ -1,68 +1,1504 @@
-<!doctype html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index 1dd7e91aeb54b3e5b0609269885515ffd6754508..3d81db376218d0cd2ea2dac0edade71a3f691d54 100644
+--- a/index.html
++++ b/index.html
+@@ -1,243 +1,1265 @@
+ <!doctype html>
  <html lang="en">
  <head>
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width,initial-scale=1" />
- <title>CF Stories • Aotearoa</title>
- <meta name="description" content="Full CF write-ups with Markdown—search, filter, favourites, and deep links." />
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
- <style>
- :root{--bg:#0a0b0f;--panel:#0d1117;--muted:#aeb3bd;--text:#e8ecf1;--line:#1b2230;--rose:#ff4d6d;--sky:#3aa0ff;--mint:#2dd4bf}
- *{box-sizing:border-box}
- html,body{height:100%}
- body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);
- background:radial-gradient(900px 600px at -10% -10%, rgba(255,77,109,.12), transparent 60%),
-            radial-gradient(900px 600px at 110% 110%, rgba(58,160,255,.12), transparent 60%),
-            linear-gradient(180deg,#07080c 0%,#0a0b0f 40%,#0b0f18 100%)}
- a{color:#93c5fd}
- header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(8,10,15,.55);border-bottom:1px solid var(--line)}
- .container{max-width:1100px;margin:0 auto;padding:16px 18px}
- .brand{display:flex;align-items:center;gap:10px;font-family:Outfit,Inter,sans-serif;font-weight:900;letter-spacing:.3px}
-+.toolbar{display:flex;align-items:center;gap:14px}
-+.toolbar-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
- .pulse{width:18px;height:18px;border-radius:50%;background:var(--mint);position:relative;box-shadow:0 0 0 0 rgba(45,212,191,.6);animation:pulse 2s infinite}
- @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,212,191,.6)}70%{box-shadow:0 0 0 14px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
- .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:#0e131b;color:var(--text);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .2s;font-size:14px}
- .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
- .icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:12px}
-+.hero{padding:56px 18px 20px}
-+.hero-title{font-family:Outfit,Inter,sans-serif;font-size:clamp(30px,4.4vw,52px);margin:0;color:#fff;line-height:1.08}
-+.hero-title span{color:var(--mint)}
-+.hero-subtitle{max-width:760px;margin:12px 0 0;line-height:1.7;color:var(--muted)}
-+.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;align-items:stretch}
-+.control-buttons{display:flex;gap:8px;flex-wrap:wrap}
- .seg{display:flex;gap:6px;flex-wrap:wrap;padding:6px;border-radius:12px;background:#0b0f17;border:1px solid var(--line)}
+-<meta charset="utf-8" />
+-<meta name="viewport" content="width=device-width,initial-scale=1" />
+-<title>CF Stories • Aotearoa</title>
+-<meta name="description" content="Full CF write-ups with Markdown—search, filter, favourites, and deep links." />
+-<link rel="preconnect" href="https://fonts.googleapis.com">
+-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+-<style>
+-:root{--bg:#0a0b0f;--panel:#0d1117;--muted:#aeb3bd;--text:#e8ecf1;--line:#1b2230;--rose:#ff4d6d;--sky:#3aa0ff;--mint:#2dd4bf}
+-*{box-sizing:border-box}
+-html,body{height:100%}
+-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);
+-background:radial-gradient(900px 600px at -10% -10%, rgba(255,77,109,.12), transparent 60%),
+-           radial-gradient(900px 600px at 110% 110%, rgba(58,160,255,.12), transparent 60%),
+-           linear-gradient(180deg,#07080c 0%,#0a0b0f 40%,#0b0f18 100%)}
+-a{color:#93c5fd}
+-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(8,10,15,.55);border-bottom:1px solid var(--line)}
+-.container{max-width:1100px;margin:0 auto;padding:16px 18px}
+-.brand{display:flex;align-items:center;gap:10px;font-family:Outfit,Inter,sans-serif;font-weight:900;letter-spacing:.3px}
+-.pulse{width:18px;height:18px;border-radius:50%;background:var(--mint);position:relative;box-shadow:0 0 0 0 rgba(45,212,191,.6);animation:pulse 2s infinite}
+-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,212,191,.6)}70%{box-shadow:0 0 0 14px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:#0e131b;color:var(--text);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .2s;font-size:14px}
+-.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+-.icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:12px}
+-.seg{display:flex;gap:6px;flex-wrap:wrap;padding:6px;border-radius:12px;background:#0b0f17;border:1px solid var(--line)}
 -.seg button{padding:8px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer}
-+.seg button{padding:8px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer;transition:background .15s,color .15s}
- .seg button.active{background:#111826;color:#fff;border-color:#1c2433}
- .search{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:14px;background:#0d121b;color:var(--text);min-width:260px}
- .search input{width:100%;background:transparent;border:none;outline:none;color:inherit;font-size:16px}
-+.stories{padding:18px}
-+.resources{padding:20px 18px 48px}
-+.section-title{margin:0 0 16px;font-size:1.3rem;font-weight:700}
- .grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:18px}
-+@media(min-width:680px){.hero-actions{align-items:center}}
- @media(min-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-+.resources-grid .card{background:linear-gradient(180deg,#0f1520,#0d1119)}
- .card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#0f1520,#0c1019);padding:18px;isolation:isolate;transition:transform .15s,box-shadow .2s,border-color .2s}
- .card:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.35);border-color:#273247}
+-.seg button.active{background:#111826;color:#fff;border-color:#1c2433}
+-.search{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:14px;background:#0d121b;color:var(--text);min-width:260px}
+-.search input{width:100%;background:transparent;border:none;outline:none;color:inherit;font-size:16px}
+-.grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:18px}
+-@media(min-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+-.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#0f1520,#0c1019);padding:18px;isolation:isolate;transition:transform .15s,box-shadow .2s,border-color .2s}
+-.card:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.35);border-color:#273247}
 -.badge{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-+.post-card{display:flex;flex-direction:column;gap:14px;padding:22px;background:linear-gradient(160deg,rgba(20,28,42,.9),rgba(10,14,24,.85))}
-+.post-card__header{display:flex;gap:14px;align-items:flex-start}
-+.post-card__avatar{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-weight:900;font-size:1.05rem;background:linear-gradient(135deg,var(--rose),var(--sky));color:#fff;box-shadow:0 10px 30px rgba(255,77,109,.25)}
-+.post-card__meta{flex:1;min-width:0}
-+.post-card__title{margin:0;font-size:1.1rem;font-weight:800;letter-spacing:.01em}
-+.post-card__tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-+.tag-chip{font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(45,212,191,.12);color:var(--mint);border:1px solid rgba(45,212,191,.25)}
-+.post-card__snippet{margin:4px 0 0;font-size:.95rem;line-height:1.6}
-+.post-card__actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-+.btn-soft{background:#101725;border-color:#1d2535;color:#e2e8f0}
-+.btn-ghost{background:transparent;border-color:#1f2738;color:var(--muted)}
-+.btn-ghost.is-active{color:#facc15;border-color:rgba(250,204,21,.45);background:rgba(250,204,21,.08)}
-+.btn-soft:hover{box-shadow:0 16px 32px rgba(0,0,0,.35)}
-+.empty{padding:48px 20px;border:1px dashed rgba(58,160,255,.35);border-radius:18px;text-align:center;background:rgba(11,17,28,.65)}
-+.empty h3{margin:0 0 10px;font-size:1.2rem}
+-.muted{color:var(--muted)}
+-dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(2px)}
+-dialog{width:min(820px,92vw);max-height:82vh;border:none;border-radius:16px;background:#0b0f16;color:var(--text);padding:0;overflow:hidden}
+-.dlg-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line)}
+-.dlg-body{padding:20px;overflow:auto;white-space:normal;line-height:1.75;font-size:1.02rem}
+-.dlg-body h1,h2,h3{margin:1em 0 .5em}
+-.dlg-body blockquote{margin:.6em 0;padding-left:12px;border-left:3px solid #334155;color:#cbd5e1}
+-.dlg-body code{background:#0f172a;padding:2px 6px;border-radius:6px;font-family:ui-monospace,Menlo,monospace}
+-.progress{height:3px;background:#1b2230;position:relative}
+-.progress .bar{position:absolute;inset:0 auto 0 0;width:0%;background:linear-gradient(90deg,var(--mint),var(--sky))}
+-.fab{position:fixed;right:16px;bottom:16px;z-index:60}
+-.footer{padding:30px 18px;border-top:1px solid var(--line);color:var(--muted)}
+-.theme-light{--text:#0b1220;--muted:#5a6475;--panel:#f6f8fb}
+-</style>
++  <meta charset="utf-8" />
++  <meta name="viewport" content="width=device-width,initial-scale=1" />
++  <title>CF Stories • Aotearoa</title>
++  <meta name="description" content="Full CF write-ups with Markdown—search, filter, favourite, and share." />
++  <link rel="preconnect" href="https://fonts.googleapis.com" />
++  <link
++    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap"
++    rel="stylesheet"
++  />
++  <style>
++    :root {
++      color-scheme: dark;
++      --bg: #05070d;
++      --bg-alt: #070a14;
++      --panel: rgba(12, 17, 27, 0.88);
++      --panel-strong: #121826;
++      --text-primary: #e8ecf6;
++      --text-muted: #96a0b6;
++      --line: rgba(148, 163, 184, 0.18);
++      --accent-rose: #ff4d6d;
++      --accent-mint: #2dd4bf;
++      --accent-sky: #38bdf8;
++      --radius-md: 12px;
++      --radius-lg: 18px;
++      --radius-xl: 24px;
++      --shadow-elevated: 0 18px 45px rgba(8, 15, 30, 0.38);
++      --font-heading: "Outfit", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
++    }
++
++    body.theme-light {
++      color-scheme: light;
++      --bg: #f5f7fb;
++      --bg-alt: #f0f4ff;
++      --panel: rgba(255, 255, 255, 0.86);
++      --panel-strong: #ffffff;
++      --text-primary: #111827;
++      --text-muted: #4b5563;
++      --line: rgba(15, 23, 42, 0.12);
++      --shadow-elevated: 0 18px 45px rgba(15, 23, 42, 0.18);
++    }
++
++    * {
++      box-sizing: border-box;
++    }
++
++    html,
++    body {
++      height: 100%;
++    }
++
++    body {
++      margin: 0;
++      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
++      color: var(--text-primary);
++      background:
++        radial-gradient(900px 600px at -20% -20%, rgba(255, 77, 109, 0.12), transparent 65%),
++        radial-gradient(900px 600px at 120% 120%, rgba(56, 189, 248, 0.16), transparent 70%),
++        linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 40%, var(--bg) 100%);
++      letter-spacing: -0.01em;
++    }
++
++    a {
++      color: var(--accent-sky);
++    }
++
++    button,
++    input {
++      font: inherit;
++      color: inherit;
++    }
++
++    button {
++      cursor: pointer;
++      border: none;
++      background: none;
++    }
++
++    .wrap {
++      width: min(1080px, 92vw);
++      margin: 0 auto;
++    }
++
++    .site-header {
++      position: sticky;
++      top: 0;
++      z-index: 50;
++      border-bottom: 1px solid var(--line);
++      background: rgba(5, 7, 13, 0.65);
++      backdrop-filter: blur(14px);
++    }
++
++    body.theme-light .site-header {
++      background: rgba(245, 247, 251, 0.8);
++    }
++
++    .toolbar {
++      display: flex;
++      align-items: center;
++      gap: 16px;
++      padding: 16px 0;
++    }
++
++    .toolbar__brand {
++      display: inline-flex;
++      align-items: center;
++      gap: 10px;
++      font-family: var(--font-heading);
++      font-weight: 900;
++      font-size: 1.05rem;
++      letter-spacing: 0.3px;
++      color: inherit;
++      text-decoration: none;
++    }
++
++    .toolbar__pulse {
++      width: 18px;
++      height: 18px;
++      border-radius: 999px;
++      background: var(--accent-mint);
++      position: relative;
++      box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.65);
++      animation: beacon 2.2s ease-out infinite;
++    }
++
++    @keyframes beacon {
++      0% {
++        box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.45);
++      }
++      70% {
++        box-shadow: 0 0 0 16px rgba(45, 212, 191, 0);
++      }
++      100% {
++        box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
++      }
++    }
++
++    .toolbar__actions {
++      margin-left: auto;
++      display: flex;
++      align-items: center;
++      gap: 10px;
++    }
++
++    .btn {
++      display: inline-flex;
++      align-items: center;
++      justify-content: center;
++      gap: 8px;
++      padding: 10px 16px;
++      border-radius: var(--radius-md);
++      border: 1px solid var(--line);
++      background: rgba(13, 18, 32, 0.75);
++      color: inherit;
++      text-decoration: none;
++      transition: transform 0.16s ease, box-shadow 0.22s ease, border-color 0.22s ease;
++      font-size: 0.95rem;
++      min-height: 44px;
++    }
++
++    .btn:hover {
++      transform: translateY(-1px);
++      box-shadow: var(--shadow-elevated);
++      border-color: rgba(148, 163, 184, 0.35);
++    }
++
++    .btn:focus-visible {
++      outline: 2px solid var(--accent-sky);
++      outline-offset: 2px;
++    }
++
++    .btn--ghost {
++      background: transparent;
++    }
++
++    .btn--primary {
++      background: linear-gradient(135deg, rgba(45, 212, 191, 0.92), rgba(56, 189, 248, 0.92));
++      color: #041119;
++      font-weight: 600;
++      border: none;
++    }
++
++    .btn--icon {
++      width: 44px;
++      min-width: 44px;
++      padding: 0;
++    }
++
++    .hero {
++      padding: 56px 0 32px;
++      display: grid;
++      gap: 24px;
++    }
++
++    .hero__title {
++      margin: 0;
++      font-family: var(--font-heading);
++      font-size: clamp(2.2rem, 5vw, 3.5rem);
++      line-height: 1.08;
++      color: #fff;
++    }
++
++    body.theme-light .hero__title {
++      color: #0f172a;
++    }
++
++    .hero__title span {
++      color: var(--accent-mint);
++    }
++
++    .hero__lead {
++      margin: 0;
++      max-width: 760px;
++      line-height: 1.7;
++      color: var(--text-muted);
++      font-size: 1.05rem;
++    }
++
++    .hero__actions {
++      display: flex;
++      flex-wrap: wrap;
++      gap: 14px;
++      align-items: stretch;
++    }
++
++    .search-control {
++      flex: 1 1 240px;
++      display: flex;
++      align-items: center;
++      gap: 10px;
++      padding: 12px 16px;
++      border-radius: var(--radius-lg);
++      border: 1px solid var(--line);
++      background: rgba(13, 18, 32, 0.85);
++    }
++
++    .search-control input {
++      flex: 1;
++      background: transparent;
++      border: none;
++      outline: none;
++    }
++
++    body.theme-light .search-control {
++      background: rgba(255, 255, 255, 0.9);
++    }
++
++    .filters {
++      display: flex;
++      align-items: center;
++      gap: 8px;
++      padding: 6px;
++      border-radius: var(--radius-lg);
++      border: 1px solid var(--line);
++      background: rgba(8, 12, 22, 0.75);
++      flex-wrap: wrap;
++    }
++
++    body.theme-light .filters {
++      background: rgba(255, 255, 255, 0.85);
++    }
++
++    .filters button {
++      padding: 8px 12px;
++      border-radius: var(--radius-md);
++      border: 1px solid transparent;
++      color: var(--text-muted);
++      background: transparent;
++      transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease;
++    }
++
++    .filters button.active {
++      background: rgba(17, 24, 39, 0.85);
++      color: #fff;
++      border-color: rgba(148, 163, 184, 0.35);
++    }
++
++    body.theme-light .filters button.active {
++      background: rgba(148, 163, 184, 0.15);
++      color: #0f172a;
++    }
++
++    .hero__controls {
++      display: flex;
++      align-items: center;
++      flex-wrap: wrap;
++      gap: 10px;
++    }
++
++    .story-section {
++      padding: 16px 0 32px;
++      display: grid;
++      gap: 18px;
++    }
++
++    .section-heading {
++      display: flex;
++      flex-wrap: wrap;
++      align-items: baseline;
++      gap: 10px;
++    }
++
++    .section-heading h2 {
++      margin: 0;
++      font-size: 1.4rem;
++      font-weight: 700;
++    }
++
++    .count {
++      color: var(--text-muted);
++      font-size: 0.95rem;
++    }
++
++    .grid {
++      display: grid;
++      gap: 18px;
++      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
++    }
++
++    .card {
++      position: relative;
++      border-radius: var(--radius-lg);
++      border: 1px solid var(--line);
++      background: linear-gradient(180deg, rgba(13, 18, 32, 0.95), rgba(8, 11, 20, 0.85));
++      padding: 22px;
++      isolation: isolate;
++      transition: transform 0.16s ease, box-shadow 0.22s ease, border-color 0.22s ease;
++    }
++
++    .card:hover {
++      transform: translateY(-2px);
++      box-shadow: var(--shadow-elevated);
++      border-color: rgba(148, 163, 184, 0.35);
++    }
++
++    body.theme-light .card {
++      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(235, 244, 255, 0.9));
++    }
++
++    .story-card {
++      display: flex;
++      flex-direction: column;
++      gap: 16px;
++      min-height: 220px;
++    }
++
++    .story-card__header {
++      display: flex;
++      gap: 16px;
++      align-items: flex-start;
++    }
++
++    .story-card__avatar {
++      width: 52px;
++      height: 52px;
++      border-radius: 18px;
++      display: grid;
++      place-items: center;
++      font-family: var(--font-heading);
++      font-weight: 800;
++      letter-spacing: 0.02em;
++      font-size: 1.08rem;
++      color: #fff;
++      background: linear-gradient(135deg, var(--accent-rose), var(--accent-sky));
++      box-shadow: 0 14px 36px rgba(255, 77, 109, 0.25);
++    }
++
++    .story-card__meta {
++      flex: 1;
++      min-width: 0;
++      display: grid;
++      gap: 8px;
++    }
++
++    .story-card__title {
++      margin: 0;
++      font-size: 1.15rem;
++      font-weight: 800;
++      letter-spacing: 0.01em;
++    }
++
++    .story-card__tags {
++      display: inline-flex;
++      flex-wrap: wrap;
++      gap: 6px;
++    }
++
++    .tag-chip {
++      padding: 4px 10px;
++      border-radius: 999px;
++      font-size: 0.75rem;
++      font-weight: 600;
++      background: rgba(45, 212, 191, 0.12);
++      color: var(--accent-mint);
++      border: 1px solid rgba(45, 212, 191, 0.28);
++      letter-spacing: 0.03em;
++    }
++
++    .story-card__snippet {
++      margin: 0;
++      color: var(--text-muted);
++      line-height: 1.65;
++    }
++
++    .story-card__actions {
++      display: flex;
++      flex-wrap: wrap;
++      gap: 10px;
++    }
++
++    .story-card__actions .btn {
++      min-height: 40px;
++      padding-inline: 14px;
++    }
++
++    .btn--ghost.is-active {
++      color: #facc15;
++      border-color: rgba(250, 204, 21, 0.45);
++      background: rgba(250, 204, 21, 0.1);
++    }
++
++    .empty-state {
++      padding: 48px 24px;
++      border-radius: var(--radius-lg);
++      border: 1px dashed rgba(56, 189, 248, 0.4);
++      text-align: center;
++      background: rgba(8, 12, 22, 0.65);
++      display: grid;
++      gap: 12px;
++    }
++
++    .empty-state h3 {
++      margin: 0;
++      font-size: 1.2rem;
++    }
++
++    .empty-state p {
++      margin: 0;
++      color: var(--text-muted);
++    }
++
++    .resources {
++      padding: 24px 0 56px;
++      display: grid;
++      gap: 18px;
++    }
++
++    .resources h2 {
++      margin: 0;
++    }
++
++    .resource-card {
++      display: flex;
++      flex-direction: column;
++      gap: 12px;
++      background: linear-gradient(180deg, rgba(15, 21, 32, 0.92), rgba(9, 13, 22, 0.88));
++    }
++
++    body.theme-light .resource-card {
++      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 246, 255, 0.9));
++    }
++
++    .resource-card strong {
++      font-size: 1.1rem;
++    }
++
++    .resource-card p {
++      margin: 0;
++      color: var(--text-muted);
++      line-height: 1.6;
++    }
++
++    .resource-card .btn {
++      align-self: flex-start;
++    }
++
++    .floating {
++      position: fixed;
++      right: 18px;
++      bottom: 18px;
++      z-index: 60;
++    }
++
++    dialog::backdrop {
++      background: rgba(2, 6, 14, 0.65);
++      backdrop-filter: blur(4px);
++    }
++
++    dialog {
++      width: min(860px, 92vw);
++      max-height: 82vh;
++      border: none;
++      border-radius: var(--radius-lg);
++      background: var(--panel);
++      color: inherit;
++      padding: 0;
++      overflow: hidden;
++      box-shadow: 0 20px 60px rgba(3, 7, 18, 0.55);
++    }
++
++    body.theme-light dialog {
++      background: var(--panel-strong);
++    }
++
++    .dlg-head {
++      display: flex;
++      align-items: center;
++      justify-content: space-between;
++      gap: 12px;
++      padding: 18px 20px;
++      border-bottom: 1px solid var(--line);
++    }
++
++    .dlg-title {
++      font-weight: 800;
++      font-size: 1.05rem;
++    }
++
++    .dlg-actions {
++      display: flex;
++      flex-wrap: wrap;
++      gap: 8px;
++    }
++
++    .dlg-body {
++      padding: 24px;
++      overflow: auto;
++      white-space: normal;
++      line-height: 1.78;
++      font-size: 1.02rem;
++      background: rgba(4, 7, 15, 0.65);
++    }
++
++    body.theme-light .dlg-body {
++      background: rgba(255, 255, 255, 0.9);
++    }
++
++    .dlg-body h1,
++    .dlg-body h2,
++    .dlg-body h3,
++    .dlg-body h4,
++    .dlg-body h5,
++    .dlg-body h6 {
++      margin: 1.2em 0 0.6em;
++    }
++
++    .dlg-body blockquote {
++      margin: 0.8em 0;
++      padding-left: 16px;
++      border-left: 3px solid #334155;
++      color: #cbd5e1;
++    }
++
++    body.theme-light .dlg-body blockquote {
++      color: #334155;
++      border-left-color: rgba(148, 163, 184, 0.6);
++    }
++
++    .dlg-body code {
++      background: rgba(15, 23, 42, 0.7);
++      padding: 2px 6px;
++      border-radius: 6px;
++      font-family: ui-monospace, Menlo, "SFMono-Regular", Consolas, monospace;
++      font-size: 0.92em;
++    }
++
++    body.theme-light .dlg-body code {
++      background: rgba(226, 232, 240, 0.7);
++    }
++
++    .progress {
++      height: 3px;
++      background: rgba(148, 163, 184, 0.2);
++      position: relative;
++      overflow: hidden;
++    }
++
++    .progress__bar {
++      position: absolute;
++      inset: 0 auto 0 0;
++      width: 0%;
++      background: linear-gradient(90deg, var(--accent-mint), var(--accent-sky));
++      transition: width 0.16s ease;
++    }
++
++    .footer {
++      padding: 32px 0 48px;
++      color: var(--text-muted);
++      border-top: 1px solid var(--line);
++      font-size: 0.95rem;
++      text-align: center;
++    }
++
++    .skeleton {
++      position: relative;
++      overflow: hidden;
++      background: rgba(10, 14, 24, 0.85);
++      border-style: solid;
++    }
++
++    .skeleton__line {
++      height: 12px;
++      border-radius: 999px;
++      background: rgba(148, 163, 184, 0.12);
++    }
++
++    .skeleton__line--wide {
++      width: 80%;
++    }
++
++    .skeleton__line--medium {
++      width: 60%;
++    }
++
++    .skeleton__line--short {
++      width: 40%;
++    }
++
++    .skeleton__grid {
++      display: grid;
++      gap: 14px;
++    }
++
++    .muted {
++      color: var(--text-muted);
++    }
++
++    @media (max-width: 720px) {
++      .toolbar {
++        flex-wrap: wrap;
++        justify-content: space-between;
++      }
++      .hero__actions {
++        flex-direction: column;
++        align-items: stretch;
++      }
++      .hero__controls {
++        width: 100%;
++      }
++      .floating {
++        right: 12px;
++        bottom: 12px;
++      }
++    }
++
++    @media (prefers-reduced-motion: reduce) {
++      *,
++      *::before,
++      *::after {
++        animation-duration: 0.01ms !important;
++        animation-iteration-count: 1 !important;
++        transition-duration: 0.01ms !important;
++        scroll-behavior: auto !important;
++      }
++    }
++  </style>
+ </head>
+-<body>
+-<header>
+-  <div class="container" style="display:flex;align-items:center;gap:14px;">
+-    <div class="brand"><span class="pulse" aria-hidden="true"></span><span>CF Stories • Aotearoa</span></div>
+-    <div style="margin-left:auto;display:flex;gap:8px;align-items:center;">
+-      <button id="themeBtn" class="btn icon-btn" title="Toggle theme">🌓</button>
+-      <a class="btn" href="#resources">Resources</a>
+-    </div>
+-  </div>
+-</header>
+-
+-<main>
+-  <section class="container" style="padding:38px 18px 10px">
+-    <h1 style="font-family:Outfit,Inter,sans-serif;font-size:clamp(28px,4vw,48px);margin:0 0 10px">Full write-ups with Markdown. Fast, clean, and shareable.</h1>
+-    <p class="muted" style="max-width:760px;margin:6px 0 0">Search feelings, filter by tags, save favourites, deep-link to any piece, and switch themes. No names — just truth.</p>
+-
+-    <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+-      <label class="search" aria-label="Search posts">
+-        <span aria-hidden="true">🔎</span>
+-        <input id="search" type="text" placeholder="Search words, feelings, topics…" />
+-      </label>
+-      <div id="seg" class="seg" role="tablist" aria-label="Filters"></div>
+-      <div style="display:flex;gap:8px;flex-wrap:wrap">
+-        <button id="importBtn" class="btn">Import JSON</button>
+-        <button id="exportBtn" class="btn">Export JSON</button>
+-        <button id="clearLocal" class="btn" title="Clear local edits">Reset Local</button>
++<body id="top">
++  <header class="site-header">
++    <div class="wrap toolbar">
++      <a class="toolbar__brand" href="#top">
++        <span class="toolbar__pulse" aria-hidden="true"></span>
++        <span>CF Stories • Aotearoa</span>
++      </a>
++      <div class="toolbar__actions">
++        <button id="themeBtn" class="btn btn--ghost btn--icon" type="button" aria-label="Toggle theme">☀️</button>
++        <a class="btn btn--ghost" href="#resources">Resources</a>
+       </div>
+     </div>
+-  </section>
+-
+-  <section class="container" style="padding:18px">
+-    <div id="grid" class="grid" aria-live="polite"></div>
+-  </section>
+-
+-  <section id="resources" class="container" style="padding:8px 18px 48px">
+-    <h2 style="margin:0 0 12px">Resources (Aotearoa)</h2>
+-    <div class="grid">
+-      <div class="card"><b>Cystic Fibrosis NZ</b><p class="muted">Support, info, and community for people with CF and their whānau.</p><a class="btn" target="_blank" rel="noopener" href="https://www.cfnz.org.nz">Open</a></div>
+-      <div class="card"><b>Healthline</b><p class="muted">Free 24/7 health advice from registered nurses across NZ.</p><a class="btn" target="_blank" rel="noopener" href="https://www.health.govt.nz">Open</a></div>
+-      <div class="card"><b>Mental Health Support</b><p class="muted">If you’re struggling, talk to someone. 1737 (call/text) is free 24/7.</p><a class="btn" target="_blank" rel="noopener" href="https://1737.org.nz/">Open</a></div>
+-    </div>
+-  </section>
+-</main>
+-
+-<dialog id="reader" aria-labelledby="dlg-title">
+-  <div class="progress"><div id="bar" class="bar"></div></div>
+-  <div class="dlg-head">
+-    <div id="dlg-title" style="font-weight:800">Title</div>
+-    <div style="display:flex;gap:8px">
+-      <button id="copyLinkBtn" class="btn">Copy link</button>
+-      <button id="favBtn" class="btn">Save</button>
+-      <button id="closeBtn" class="btn">Close</button>
++  </header>
++
++  <main>
++    <section class="wrap hero">
++      <h1 class="hero__title">Full write-ups with Markdown.<br /><span>Fast, clean, and shareable.</span></h1>
++      <p class="hero__lead">
++        Search by feeling, filter by tag, favourite pieces you connect with, and share deep links with friends. These are the
++        unfiltered stories from the CF community across Aotearoa.
++      </p>
++      <div class="hero__actions">
++        <label class="search-control" aria-label="Search posts">
++          <span aria-hidden="true">🔎</span>
++          <input id="search" type="text" placeholder="Search words, feelings, topics…" />
++        </label>
++        <div id="seg" class="filters" role="tablist" aria-label="Filter stories"></div>
++        <div class="hero__controls">
++          <button id="importBtn" class="btn">Import JSON</button>
++          <button id="exportBtn" class="btn">Export JSON</button>
++          <button id="clearLocal" class="btn" title="Clear local edits">Reset Local</button>
++        </div>
++      </div>
++    </section>
++
++    <section class="wrap story-section" aria-labelledby="stories-title">
++      <div class="section-heading">
++        <h2 id="stories-title">Stories</h2>
++        <span id="count" class="count" aria-live="polite">Loading…</span>
++      </div>
++      <div id="grid" class="grid" aria-live="polite"></div>
++    </section>
++
++    <section id="resources" class="wrap resources" aria-labelledby="resources-title">
++      <h2 id="resources-title">Resources (Aotearoa)</h2>
++      <div class="grid">
++        <article class="card resource-card">
++          <strong>Cystic Fibrosis NZ</strong>
++          <p>Support, information, and community for people with CF and their whānau.</p>
++          <a class="btn btn--primary" target="_blank" rel="noopener" href="https://www.cfnz.org.nz">Open</a>
++        </article>
++        <article class="card resource-card">
++          <strong>Healthline</strong>
++          <p>Free 24/7 health advice from registered nurses across New Zealand.</p>
++          <a class="btn btn--primary" target="_blank" rel="noopener" href="https://www.health.govt.nz">Open</a>
++        </article>
++        <article class="card resource-card">
++          <strong>Mental Health Support</strong>
++          <p>If you’re struggling, reach out. 1737 (call/text) is free 24/7 throughout the country.</p>
++          <a class="btn btn--primary" target="_blank" rel="noopener" href="https://1737.org.nz/">Open</a>
++        </article>
++      </div>
++    </section>
++  </main>
++
++  <dialog id="reader" aria-labelledby="dlg-title">
++    <div class="progress"><div id="bar" class="progress__bar"></div></div>
++    <div class="dlg-head">
++      <div id="dlg-title" class="dlg-title">Title</div>
++      <div class="dlg-actions">
++        <button id="copyLinkBtn" class="btn btn--ghost" type="button">Copy link</button>
++        <button id="favBtn" class="btn btn--ghost" type="button">Save</button>
++        <button id="closeBtn" class="btn btn--ghost" type="button">Close</button>
++      </div>
+     </div>
++    <div id="dlg-body" class="dlg-body" tabindex="0"></div>
++  </dialog>
++
++  <div class="floating">
++    <button id="randomBtn" class="btn btn--primary" type="button" title="Random story (R)">🎲 Random</button>
+   </div>
+-  <div id="dlg-body" class="dlg-body" tabindex="0"></div>
+-</dialog>
+-
+-<div class="fab"><button id="randomBtn" class="btn" title="Random (R)">🎲 Random</button></div>
+-
+-<footer class="container footer">© <span id="year"></span> CF Stories • Aotearoa.</footer>
+-
+-<script>
+-document.getElementById("year").textContent = new Date().getFullYear();
+-const $=id=>document.getElementById(id);
+-const grid=$("grid"),search=$("search"),seg=$("seg"),reader=$("reader"),
+-dlgTitle=$("dlg-title"),dlgBody=$("dlg-body"),favBtn=$("favBtn"),
+-copyLinkBtn=$("copyLinkBtn"),closeBtn=$("closeBtn"),randomBtn=$("randomBtn"),
+-bar=$("bar"),importBtn=$("importBtn"),exportBtn=$("exportBtn"),clearLocal=$("clearLocal"),
+-themeBtn=$("themeBtn");
+-
+-let tag="All";
+-let favs=new Set(JSON.parse(localStorage.getItem("cf_favs")||"[]"));
+-let posts=[];
+-
+-// Theme
+-(function initTheme(){
+-  const saved=localStorage.getItem("cf_theme")||"dark";
+-  if(saved==="light") document.body.classList.add("theme-light");
+-  themeBtn.onclick=()=>{ const isLight=document.body.classList.toggle("theme-light");
+-    localStorage.setItem("cf_theme", isLight? "light":"dark"); };
+-})();
+-
+-// Markdown renderer (safe-ish)
+-const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+-function mdToHtml(md){
+-  if(!md) return "";
+-  md=md.replace(/\r\n?/g,"\n");
+-  md=md.replace(/`([^`]+?)`/g,(m,code)=>`<code>${esc(code)}</code>`);
+-  md=md.replace(/^###### (.*)$/gm,"<h6>$1</h6>").replace(/^##### (.*)$/gm,"<h5>$1</h5>")
+-     .replace(/^#### (.*)$/gm,"<h4>$1</h4>").replace(/^### (.*)$/gm,"<h3>$1</h3>")
+-     .replace(/^## (.*)$/gm,"<h2>$1</h2>").replace(/^# (.*)$/gm,"<h1>$1</h1>");
+-  md=md.replace(/^\> (.*)$/gm,"<blockquote>$1</blockquote>");
+-  md=md.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/_(.+?)_/g,"<em>$1</em>");
+-  md=md.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+-  md=md.replace(/(?:^|\n)(\s*[-*] .+(?:\n\s*[-*] .+)*)/g,(m,list)=>'<ul>'+list.trim().split(/\n/).map(li=>'<li>'+li.replace(/^\s*[-*] /,'')+'</li>').join('')+'</ul>');
+-  const blocks=['h1','h2','h3','h4','h5','h6','ul','ol','blockquote','pre'];
+-  return md.split(/\n{2,}/).map(ch=>{const x=ch.trim(); if(!x) return ''; if(blocks.some(b=>new RegExp('^<'+b+'[\\s>]').test(x))) return x; return '<p>'+x.replace(/\n/g,'<br>')+'</p>';}).join('\n');
+-}
+-
+-// Load posts: local override → posts.json
+-(async function load(){
+-  try{
+-    const local=localStorage.getItem("cf_posts");
+-    if(local){ posts=JSON.parse(local); }
+-    if(!Array.isArray(posts) || posts.length===0){
+-      const res=await fetch("posts.json",{cache:"no-store"});
+-      posts=await res.json();
+-    }
+-  }catch(e){ posts=[]; }
+-  if(!Array.isArray(posts)) posts=[];
+-  renderSeg(); render();
+-  const id=location.hash.replace("#",""); const found=posts.find(p=>p.id===id); if(found) openReader(found);
+-})();
+-
+-function renderSeg(){
+-  seg.innerHTML="";
+-  const labels=["All",...new Set(posts.flatMap(p=>p.tags||[])),"Favourites"];
+-  labels.forEach(l=>{ const b=document.createElement("button"); b.textContent=l; if(l===tag) b.classList.add("active");
+-    b.onclick=()=>{ tag=l; renderSeg(); render(); }; seg.appendChild(b); });
+-}
+-
+-function matches(p,q){
+-  if(tag==="Favourites" && !favs.has(p.id)) return false;
+-  if(tag!=="All" && tag!=="Favourites" && !(p.tags||[]).includes(tag)) return false;
+-  if(!q) return true; q=q.toLowerCase();
+-  return (p.title||"").toLowerCase().includes(q) || (p.content||"").toLowerCase().includes(q);
+-}
+-
+-function render(){
+-  const q=search.value; grid.innerHTML="";
+-  posts.filter(p=>matches(p,q)).forEach(p=>{
+-    const card=document.createElement("div"); card.className="card";
+-    const wrap=document.createElement("div"); wrap.style.display="flex"; wrap.style.gap="12px"; wrap.style.alignItems="flex-start";
+-    const icon=document.createElement("div"); icon.style.width="42px"; icon.style.height="42px"; icon.style.borderRadius="14px";
+-    icon.style.display="grid"; icon.style.placeItems="center"; icon.style.fontWeight="900"; icon.style.background="linear-gradient(135deg,var(--rose),var(--sky))";
+-    icon.textContent=(p.title||"").split(" ").slice(0,2).map(w=>w[0]).join("").toUpperCase();
+-    const right=document.createElement("div"); right.style.flex="1";
+-    const h3=document.createElement("div"); h3.style.fontWeight="800"; h3.style.marginBottom="6px"; h3.textContent=p.title||"(Untitled)";
+-    const tags=document.createElement("div"); tags.style.display="flex"; tags.style.flexWrap="wrap"; tags.style.gap="6px";
+-    (p.tags||[]).forEach(t=>{ const b=document.createElement("span"); b.className="badge"; b.textContent=t; tags.appendChild(b); });
+-    const first=(p.content||"").split(/\n/).find(Boolean)||""; const snippet=first.replace(/[>#*_`]/g,"");
+-    const para=document.createElement("p"); para.className="muted"; para.style.margin="10px 0 0"; para.textContent=snippet.slice(0,200)+(snippet.length>200?"…":"");
+-    const row=document.createElement("div"); row.style.display="flex"; row.style.gap="8px"; row.style.marginTop="12px";
+-    const read=document.createElement("button"); read.className="btn"; read.textContent="Read"; read.onclick=()=>openReader(p);
+-    const like=document.createElement("button"); like.className="btn"; like.textContent=favs.has(p.id)?"★ Saved":"♡ Save";
+-    like.onclick=()=>{ if(favs.has(p.id)) favs.delete(p.id); else favs.add(p.id); localStorage.setItem("cf_favs",JSON.stringify([...favs])); like.textContent=favs.has(p.id)?"★ Saved":"♡ Save"; };
+-    const share=document.createElement("button"); share.className="btn"; share.textContent="Copy link";
+-    share.onclick=async()=>{ const url=location.origin+location.pathname+"#"+(p.id||""); try{await navigator.clipboard.writeText(url);}catch(e){prompt("Copy this link:",url);} };
+-    row.append(read,like,share); right.append(h3,tags,para,row); wrap.append(icon,right); card.append(wrap); grid.append(card);
+-  });
+-}
+-
+-// Reader
+-function openReader(p){
+-  dlgTitle.textContent=p.title||"(Untitled)";
+-  dlgBody.innerHTML=mdToHtml(p.content||"");
+-  reader.showModal(); document.body.style.overflow="hidden"; dlgBody.scrollTop=0;
+-  favBtn.textContent=favs.has(p.id)?"★ Saved":"♡ Save";
+-  favBtn.onclick=()=>{ if(favs.has(p.id)) favs.delete(p.id); else favs.add(p.id);
+-    localStorage.setItem("cf_favs",JSON.stringify([...favs])); favBtn.textContent=favs.has(p.id)?"★ Saved":"♡ Save"; };
+-  copyLinkBtn.onclick=async()=>{ const url=location.origin+location.pathname+"#"+(p.id||""); try{await navigator.clipboard.writeText(url);}catch(e){prompt("Copy this link:",url);} };
+-  dlgBody.onscroll=()=>{ const denom=Math.max(1,dlgBody.scrollHeight-dlgBody.clientHeight); const prog=dlgBody.scrollTop/denom; bar.style.width=(prog*100).toFixed(1)+"%"; };
+-  closeBtn.onclick=closeReader;
+-}
+-function closeReader(){ reader.close(); document.body.style.overflow=""; bar.style.width="0%"; }
+-
+-// Keyboard + search
+-let t; search.addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(render,120); });
+-window.addEventListener("keydown",e=>{ if(e.key==="/"){e.preventDefault(); search.focus();} if(e.key.toLowerCase()==="r"){ const i=Math.floor(Math.random()*posts.length); if(posts[i]) openReader(posts[i]); } if(e.key==="Escape"&&reader.open) closeReader(); });
+-
+-// Import/Export/Reset
+-importBtn.onclick=async()=>{ const txt=prompt("Paste JSON array of posts here:"); if(!txt) return; try{ const data=JSON.parse(txt); if(!Array.isArray(data)) throw new Error("Not an array"); localStorage.setItem("cf_posts",JSON.stringify(data)); posts=data; renderSeg(); render(); alert("Saved to this device. (Public site still uses posts.json in your repo.)"); }catch(e){ alert("Invalid JSON: "+e.message); } };
+-exportBtn.onclick=()=>{ const blob=new Blob([JSON.stringify(posts,null,2)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="posts.json"; a.click(); URL.revokeObjectURL(a.href); };
+-clearLocal.onclick=()=>{ localStorage.removeItem("cf_posts"); alert("Local override cleared. Reloading repo posts.json…"); location.reload(); };
+-</script>
+-</body>
+-</html>
+ 
+-      function openPost(post) {
+-        dlgBody.innerHTML = "<h2>"+post.title+"</h2>"+mdToHtml(post.content);
+-        reader.showModal();
++  <footer class="wrap footer">© <span id="year"></span> CF Stories • Aotearoa.</footer>
++
++  <script>
++    document.getElementById("year").textContent = new Date().getFullYear();
++    const $ = (id) => document.getElementById(id);
++
++    const ui = {
++      grid: $("grid"),
++      search: $("search"),
++      filters: $("seg"),
++      reader: $("reader"),
++      dlgTitle: $("dlg-title"),
++      dlgBody: $("dlg-body"),
++      favBtn: $("favBtn"),
++      copyBtn: $("copyLinkBtn"),
++      closeBtn: $("closeBtn"),
++      randomBtn: $("randomBtn"),
++      progress: $("bar"),
++      importBtn: $("importBtn"),
++      exportBtn: $("exportBtn"),
++      clearBtn: $("clearLocal"),
++      themeBtn: $("themeBtn"),
++      count: $("count"),
++    };
++
++    let posts = [];
++    let activeTag = "All";
++    let loadError = false;
++    const favourites = new Set(JSON.parse(localStorage.getItem("cf_favs") || "[]"));
++
++    function syncThemeButton() {
++      const isLight = document.body.classList.contains("theme-light");
++      ui.themeBtn.textContent = isLight ? "🌙" : "☀️";
++      ui.themeBtn.setAttribute("aria-pressed", isLight ? "true" : "false");
++      ui.themeBtn.setAttribute("title", isLight ? "Switch to dark theme" : "Switch to light theme");
++    }
++
++    (function initTheme() {
++      const saved = localStorage.getItem("cf_theme") || "dark";
++      if (saved === "light") {
++        document.body.classList.add("theme-light");
+       }
++      syncThemeButton();
++      ui.themeBtn.addEventListener("click", () => {
++        const isLight = document.body.classList.toggle("theme-light");
++        localStorage.setItem("cf_theme", isLight ? "light" : "dark");
++        syncThemeButton();
++      });
++    })();
++
++    const esc=value=>
++      value.replace(/[&<>"']/g, (c) => ({
++        "&": "&amp;",
++        "<": "&lt;",
++        ">": "&gt;",
++        '"': "&quot;",
++        "'": "&#39;",
++      })[c]);
+ 
+-      const reader = document.getElementById("reader");
+-      const dlgBody = document.getElementById("dlg-body");
+-      search.oninput = render;
+-      render();
++    function mdToHtml(md) {
++      if (!md) return "";
++      md = md.replace(/\r\n?/g, "\n");
++      md = md.replace(/`([^`]+?)`/g, (_, code) => `<code>${esc(code)}</code>`);
++      md = md
++        .replace(/^###### (.*)$/gm, "<h6>$1</h6>")
++        .replace(/^##### (.*)$/gm, "<h5>$1</h5>")
++        .replace(/^#### (.*)$/gm, "<h4>$1</h4>")
++        .replace(/^### (.*)$/gm, "<h3>$1</h3>")
++        .replace(/^## (.*)$/gm, "<h2>$1</h2>")
++        .replace(/^# (.*)$/gm, "<h1>$1</h1>");
++      md = md.replace(/^> (.*)$/gm, "<blockquote>$1</blockquote>");
++      md = md.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/_(.+?)_/g, "<em>$1</em>");
++      md = md.replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
++      md = md.replace(/(?:^|\n)(\s*[-*] .+(?:\n\s*[-*] .+)*)/g, (match) => {
++        const items = match
++          .trim()
++          .split(/\n/)
++          .map((line) => `<li>${line.replace(/^\s*[-*] /, "")}</li>`)
++          .join("");
++        return `<ul>${items}</ul>`;
++      });
++      md = md.replace(/(?:^|\n)(\s*\d+\. .+(?:\n\s*\d+\. .+)*)/g, (match) => {
++        const items = match
++          .trim()
++          .split(/\n/)
++          .map((line) => `<li>${line.replace(/^\s*\d+\. /, "")}</li>`)
++          .join("");
++        return `<ol>${items}</ol>`;
++      });
++      md = md.replace(/\n{3,}/g, "\n\n");
++      const blockTags = ["h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "blockquote", "pre"];
++      return md
++        .split(/\n{2,}/)
++        .map((chunk) => {
++          const trimmed = chunk.trim();
++          if (!trimmed) return "";
++          if (blockTags.some((tag) => new RegExp(`^<${tag}(\\s|>)`).test(trimmed))) {
++            return trimmed;
++          }
++          return `<p>${trimmed.replace(/\n/g, "<br>")}</p>`;
++        })
++        .join("\n");
+     }
++
++    // Load posts
++
++    function showLoadingSkeleton() {
++      ui.grid.innerHTML = "";
++      ui.count.textContent = "Loading…";
++      for (let i = 0; i < 3; i += 1) {
++        const skeleton = document.createElement("article");
++        skeleton.className = "card story-card skeleton";
++        const lines = document.createElement("div");
++        lines.className = "skeleton__grid";
++        const headerLine = document.createElement("div");
++        headerLine.className = "skeleton__line skeleton__line--medium";
++        lines.append(headerLine);
++        const bodyLine = document.createElement("div");
++        bodyLine.className = "skeleton__line skeleton__line--wide";
++        lines.append(bodyLine);
++        const shortLine = document.createElement("div");
++        shortLine.className = "skeleton__line skeleton__line--short";
++        lines.append(shortLine);
++        skeleton.append(lines);
++        ui.grid.append(skeleton);
++      }
++    }
++
++    function createFilterButton(label) {
++      const button = document.createElement("button");
++      button.type = "button";
++      button.textContent = label;
++      if (label === activeTag) {
++        button.classList.add("active");
++        button.setAttribute("aria-pressed", "true");
++      } else {
++        button.setAttribute("aria-pressed", "false");
++      }
++      button.addEventListener("click", () => {
++        activeTag = label;
++        renderFilters();
++        renderGrid();
++      });
++      return button;
++    }
++
++    function renderFilters() {
++      ui.filters.innerHTML = "";
++      if (!posts.length) return;
++      const tags = Array.from(new Set(posts.flatMap((post) => post.tags || []))).sort((a, b) => a.localeCompare(b));
++      const labels = ["All", ...tags];
++      if (favourites.size) {
++        labels.push("Favourites");
++      }
++      if (!labels.includes(activeTag)) {
++        activeTag = "All";
++      }
++      labels.forEach((label) => ui.filters.append(createFilterButton(label)));
++    }
++
++    function matches(post, query) {
++      if (activeTag === "Favourites" && !favourites.has(post.id)) {
++        return false;
++      }
++      if (activeTag !== "All" && activeTag !== "Favourites" && !(post.tags || []).includes(activeTag)) {
++        return false;
++      }
++      if (!query) return true;
++      const text = `${post.title || ""} ${post.content || ""}`.toLowerCase();
++      return text.includes(query);
++    }
++
++    function renderEmptyState(title, message) {
++      ui.grid.innerHTML = "";
++      const wrapper = document.createElement("div");
++      wrapper.className = "empty-state";
++      const heading = document.createElement("h3");
++      heading.textContent = title;
++      wrapper.append(heading);
++      if (message) {
++        const para = document.createElement("p");
++        para.textContent = message;
++        wrapper.append(para);
++      }
++      ui.grid.append(wrapper);
++    }
++
++    function updateCount(amount) {
++      const label = amount === 1 ? "story" : "stories";
++      ui.count.textContent = `${amount} ${label}`;
++    }
++
++    function shareUrl(id) {
++      const base = window.location.href.replace(/#.*$/, "");
++      return `${base}#${id || ""}`;
++    }
++
++    function updateHistory(id) {
++      if (typeof window.history?.replaceState === "function") {
++        if (id) {
++          window.history.replaceState(null, "", `#${id}`);
++        } else {
++          window.history.replaceState(null, "", `${location.pathname}${location.search}`);
++        }
++      } else if (id) {
++        location.hash = id;
++      }
++    }
++
++    function createActionButton(label, className, handler) {
++      const button = document.createElement("button");
++      button.type = "button";
++      button.className = `btn ${className}`.trim();
++      button.textContent = label;
++      button.addEventListener("click", handler);
++      return button;
++    }
++
++    function snippetFrom(post) {
++      const firstLine = (post.content || "")
++        .split(/\n/)
++        .map((line) => line.trim())
++        .find(Boolean);
++      if (!firstLine) return "";
++      const cleaned = firstLine.replace(/[>#*_`]/g, " ").replace(/\s+/g, " ").trim();
++      return cleaned.length > 200 ? `${cleaned.slice(0, 200)}…` : cleaned;
++    }
++
++    function createStoryCard(post) {
++      const card = document.createElement("article");
++      card.className = "card story-card";
++      card.dataset.id = post.id || "";
++
++      const header = document.createElement("div");
++      header.className = "story-card__header";
++
++      const avatar = document.createElement("div");
++      avatar.className = "story-card__avatar";
++      const initials = (post.title || "")
++        .split(/\s+/)
++        .filter(Boolean)
++        .slice(0, 2)
++        .map((word) => word[0])
++        .join("")
++        .toUpperCase() || "CF";
++      avatar.textContent = initials;
++      header.append(avatar);
++
++      const meta = document.createElement("div");
++      meta.className = "story-card__meta";
++      const title = document.createElement("h3");
++      title.className = "story-card__title";
++      title.textContent = post.title || "(Untitled)";
++      meta.append(title);
++
++      const tagWrap = document.createElement("div");
++      tagWrap.className = "story-card__tags";
++      (post.tags || []).forEach((tag) => {
++        const chip = document.createElement("span");
++        chip.className = "tag-chip";
++        chip.textContent = tag;
++        tagWrap.append(chip);
++      });
++      if (tagWrap.childElementCount) {
++        meta.append(tagWrap);
++      }
++
++      header.append(meta);
++      card.append(header);
++
++      const snippet = snippetFrom(post);
++      if (snippet) {
++        const body = document.createElement("p");
++        body.className = "story-card__snippet";
++        body.textContent = snippet;
++        card.append(body);
++      }
++
++      const actions = document.createElement("div");
++      actions.className = "story-card__actions";
++
++      const read = createActionButton("Read", "btn--primary", (event) => {
++        event.stopPropagation();
++        openReader(post);
++      });
++      read.title = "Open full story";
++      actions.append(read);
++
++      const save = createActionButton(favourites.has(post.id) ? "★ Saved" : "♡ Save", "btn--ghost", (event) => {
++        event.stopPropagation();
++        if (favourites.has(post.id)) {
++          favourites.delete(post.id);
++        } else {
++          favourites.add(post.id);
++        }
++        localStorage.setItem("cf_favs", JSON.stringify([...favourites]));
++        renderFilters();
++        renderGrid();
++      });
++      save.title = "Toggle favourite";
++      save.classList.toggle("is-active", favourites.has(post.id));
++      actions.append(save);
++
++      const share = createActionButton("Copy link", "btn--ghost", async (event) => {
++        event.stopPropagation();
++        const url = shareUrl(post.id);
++        try {
++          await navigator.clipboard.writeText(url);
++          const original = share.textContent;
++          share.textContent = "Copied!";
++          setTimeout(() => {
++            share.textContent = original;
++          }, 1400);
++        } catch (error) {
++          prompt("Copy this link:", url);
++        }
++      });
++      share.title = "Copy shareable link";
++      actions.append(share);
++
++      card.append(actions);
++      card.addEventListener("click", () => openReader(post));
++      return card;
++    }
++
++    function renderGrid() {
++      if (!posts.length) {
++        if (loadError) {
++          renderEmptyState("Couldn’t load stories", "Check your connection or try reloading.");
++          ui.count.textContent = "0 stories";
++        } else {
++          renderEmptyState("No stories yet", "Import a JSON file or add posts to posts.json.");
++          ui.count.textContent = "0 stories";
++        }
++        return;
++      }
++
++      const query = ui.search.value.trim().toLowerCase();
++      const results = posts.filter((post) => matches(post, query));
++      ui.grid.innerHTML = "";
++
++      if (!results.length) {
++        renderEmptyState("No stories found", "Adjust filters or clear your search.");
++        updateCount(0);
++        return;
++      }
++
++      results.forEach((post) => ui.grid.append(createStoryCard(post)));
++      updateCount(results.length);
++    }
++
++    function openReader(post) {
++      ui.dlgTitle.textContent = post.title || "(Untitled)";
++      ui.dlgBody.innerHTML = mdToHtml(post.content || "");
++      ui.reader.showModal();
++      document.body.style.overflow = "hidden";
++      ui.dlgBody.scrollTop = 0;
++      ui.progress.style.width = "0%";
++      ui.favBtn.textContent = favourites.has(post.id) ? "★ Saved" : "♡ Save";
++      ui.favBtn.classList.toggle("is-active", favourites.has(post.id));
++      ui.favBtn.onclick = () => {
++        if (favourites.has(post.id)) {
++          favourites.delete(post.id);
++        } else {
++          favourites.add(post.id);
++        }
++        localStorage.setItem("cf_favs", JSON.stringify([...favourites]));
++        ui.favBtn.textContent = favourites.has(post.id) ? "★ Saved" : "♡ Save";
++        ui.favBtn.classList.toggle("is-active", favourites.has(post.id));
++        renderFilters();
++        renderGrid();
++      };
++      ui.copyBtn.onclick = async () => {
++        const url = shareUrl(post.id);
++        try {
++          await navigator.clipboard.writeText(url);
++          ui.copyBtn.textContent = "Copied!";
++          setTimeout(() => {
++            ui.copyBtn.textContent = "Copy link";
++          }, 1400);
++        } catch (error) {
++          prompt("Copy this link:", url);
++        }
++      };
++      const updateProgress = () => {
++        const range = Math.max(1, ui.dlgBody.scrollHeight - ui.dlgBody.clientHeight);
++        const progress = ui.dlgBody.scrollTop / range;
++        ui.progress.style.width = `${(progress * 100).toFixed(1)}%`;
++      };
++      ui.dlgBody.onscroll = updateProgress;
++      updateProgress();
++      ui.closeBtn.onclick = closeReader;
++      updateHistory(post.id);
++    }
++
++    function closeReader() {
++      if (ui.reader.open) {
++        ui.reader.close();
++      }
++      document.body.style.overflow = "";
++      ui.progress.style.width = "0%";
++      ui.dlgBody.onscroll = null;
++      if (location.hash) {
++        updateHistory("");
++      }
++    }
++
++    ui.reader.addEventListener("cancel", (event) => {
++      event.preventDefault();
++      closeReader();
++    });
++
++    function handleSearchInput() {
++      clearTimeout(handleSearchInput.timer);
++      handleSearchInput.timer = setTimeout(renderGrid, 120);
++    }
++
++    ui.search.addEventListener("input", handleSearchInput);
++
++    window.addEventListener("keydown", (event) => {
++      if (event.key === "/") {
++        event.preventDefault();
++        ui.search.focus();
++      }
++      if (event.key.toLowerCase() === "r") {
++        const pool = posts.filter((post) => matches(post, ui.search.value.trim().toLowerCase()));
++        if (pool.length) {
++          const random = pool[Math.floor(Math.random() * pool.length)];
++          openReader(random);
++        }
++      }
++      if (event.key === "Escape" && ui.reader.open) {
++        closeReader();
++      }
++    });
++
++    ui.randomBtn.addEventListener("click", () => {
++      const pool = posts.filter((post) => matches(post, ui.search.value.trim().toLowerCase()));
++      if (!pool.length) return;
++      const random = pool[Math.floor(Math.random() * pool.length)];
++      if (random) openReader(random);
++    });
++
++    ui.importBtn.onclick = async () => {
++      const text = prompt("Paste JSON array of posts here:");
++      if (!text) return;
++      try {
++        const data = JSON.parse(text);
++        if (!Array.isArray(data)) {
++          throw new Error("Not an array");
++        }
++        localStorage.setItem("cf_posts", JSON.stringify(data));
++        posts = data;
++        loadError = false;
++        renderFilters();
++        renderGrid();
++        alert("Saved to this device. Reload the page to pull from posts.json again.");
++      } catch (error) {
++        alert(`Invalid JSON: ${error.message}`);
++      }
++    };
++
++    ui.exportBtn.onclick = () => {
++      const blob = new Blob([JSON.stringify(posts, null, 2)], { type: "application/json" });
++      const link = document.createElement("a");
++      link.href = URL.createObjectURL(blob);
++      link.download = "posts.json";
++      link.click();
++      URL.revokeObjectURL(link.href);
++    };
++
++    ui.clearBtn.onclick = () => {
++      localStorage.removeItem("cf_posts");
++      alert("Local override cleared. Reloading posts.json…");
++      location.reload();
++    };
++
++    // Load posts pipeline
++    async function loadPosts() {
++      showLoadingSkeleton();
++      try {
++        const local = localStorage.getItem("cf_posts");
++        if (local) {
++          posts = JSON.parse(local);
++        }
++        if (!Array.isArray(posts) || posts.length === 0) {
++          const response = await fetch("posts.json", { cache: "no-store" });
++          if (!response.ok) throw new Error(`HTTP ${response.status}`);
++          posts = await response.json();
++        }
++        if (!Array.isArray(posts)) {
++          posts = [];
++        }
++        loadError = false;
++      } catch (error) {
++        console.error("Failed to load posts", error);
++        posts = [];
++        loadError = true;
++      }
++      renderFilters();
++      renderGrid();
++      if (location.hash) {
++        const target = posts.find((post) => post.id === location.hash.slice(1));
++        if (target) {
++          openReader(target);
++        }
++      }
++    }
++
++    window.addEventListener("hashchange", () => {
++      if (!location.hash) {
++        if (ui.reader.open) closeReader();
++        return;
++      }
++      const target = posts.find((post) => post.id === location.hash.slice(1));
++      if (target) {
++        openReader(target);
++      }
++    });
++
+     loadPosts();
+   </script>
+ </body>
+ </html>
+ 
+EOF
+)+.empty h3{margin:0 0 10px;font-size:1.2rem}
 +.empty p{margin:0;color:var(--muted)}
 +.resource-card{display:flex;flex-direction:column;gap:12px}
 +.resource-card .btn{align-self:flex-start}
