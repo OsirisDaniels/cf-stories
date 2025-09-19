@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CF Stories • Aotearoa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family: Inter, system-ui, sans-serif; background:#0a0b0f; color:#e8ecf1; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
+    .grid { display: grid; gap: 18px; }
+    .card { border:1px solid #1b2230; border-radius:16px; background:#0c1019; padding:18px; }
+    .badge { font-size:12px; padding:4px 8px; border:1px solid #1b2230; border-radius:999px; color:#aeb3bd; margin-right:6px; }
+    dialog { width:min(800px,90%); border:none; border-radius:16px; padding:0; background:#0b0f16; color:#e8ecf1; }
+    .dlg-body { padding:20px; line-height:1.7; }
+    a { color:#3aa0ff; }
+    button { background:#0d121b; border:1px solid #1b2230; color:#e8ecf1; padding:10px 14px; border-radius:12px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CF Stories • Aotearoa</h1>
+    <input id="search" type="text" placeholder="Search..." style="width:100%;padding:10px;border-radius:10px;border:1px solid #1b2230;background:#0d121b;color:#e8ecf1;margin-bottom:20px;" />
+    <div id="grid" class="grid"></div>
+  </div>
+
+  <dialog id="reader">
+    <div class="dlg-body" id="dlg-body"></div>
+    <div style="padding:12px"><button onclick="reader.close()">Close</button></div>
+  </dialog>
+
+  <script>
+    async function loadPosts() {
+      const res = await fetch("posts.json");
+      const posts = await res.json();
+      const grid = document.getElementById("grid");
+      const search = document.getElementById("search");
+
+      function render() {
+        grid.innerHTML = "";
+        const q = search.value.toLowerCase();
+        posts.filter(p => p.title.toLowerCase().includes(q) || p.content.toLowerCase().includes(q))
+             .forEach(post => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = "<h3>"+post.title+"</h3><div>"+(post.tags||[]).map(t=>"<span class='badge'>"+t+"</span>").join("")+"</div><p>"+post.content.slice(0,200)+"…</p><button>Read</button>";
+          card.querySelector("button").onclick = () => openPost(post);
+          grid.appendChild(card);
+        });
+      }
+
+      function mdToHtml(md) {
+        return md
+          .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+          .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+          .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+          .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+          .replace(/\*(.*)\*/gim, '<i>$1</i>')
+          .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2' target='_blank'>$1</a>")
+          .replace(/\n/g, '<br>');
+      }
+
+      function openPost(post) {
+        dlgBody.innerHTML = "<h2>"+post.title+"</h2>"+mdToHtml(post.content);
+        reader.showModal();
+      }
+
+      const reader = document.getElementById("reader");
+      const dlgBody = document.getElementById("dlg-body");
+      search.oninput = render;
+      render();
+    }
+    loadPosts();
+  </script>
+</body>
+</html>
